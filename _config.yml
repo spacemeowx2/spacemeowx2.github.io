@@ -73,3 +73,6 @@ deploy:
   type: git
   repository: git@github.com:spacemeowx2/spacemeowx2.github.io.git
   branch: master
+
+baidu_analytics: 5598b004247fc72850510b5f025a94ab
+google_analytics: UA-73762389-3

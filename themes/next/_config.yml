@@ -239,7 +239,7 @@ mathjax:
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 5598b004247fc72850510b5f025a94ab
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -266,7 +266,7 @@ mathjax:
 
 
 # Google Analytics
-#google_analytics:
+google_analytics: UA-73762389-3
 
 # CNZZ count
 #cnzz_siteid:
@@ -325,7 +325,7 @@ busuanzi_count:
   page_pv_footer:
 
 # Tencent analytics ID
-# tencent_analytics:
+tencent_analytics: 56768537
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
 baidu_push: true
