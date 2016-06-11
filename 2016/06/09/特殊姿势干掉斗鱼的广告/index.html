@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="js,hook,hack," />
+  <meta name="keywords" content="js,hook," />
 
 
 
@@ -90,12 +90,12 @@
 <meta property="og:url" content="http://blog.imspace.cn/2016/06/09/特殊姿势干掉斗鱼的广告/index.html">
 <meta property="og:site_name" content="空格的空地">
 <meta property="og:description" content="Why&amp;#x6597;&amp;#x9C7C;&amp;#x4F1A;&amp;#x5728;&amp;#x4F60;&amp;#x8FDB;&amp;#x5165;&amp;#x76F4;&amp;#x64AD;&amp;#x95F4;&amp;#x4E00;&amp;#x5B9A;&amp;#x65F6;&amp;#x95F4;&amp;#x540E;&amp;#x5F39;&amp;#x51FA;&amp;#x4E00;&amp;#x4E2A;&amp;#x6846;, &amp;#x5982;&amp;#x679C;&amp;#x4F60;&amp;#x5728;&amp;#x">
-<meta property="og:image" content="http://blog.imspace.cn/2016/06/09/特殊姿势干掉斗鱼的广告/fuckdouyu.jpg">
-<meta property="og:updated_time" content="2016-06-11T08:57:33.679Z">
+<meta property="og:image" content="http://blog.imspace.cn/2016/06/09/特殊姿势干掉斗鱼的广告/img_fuckdouyu.jpg">
+<meta property="og:updated_time" content="2016-06-11T12:48:20.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="特殊姿势干掉斗鱼的广告">
 <meta name="twitter:description" content="Why&amp;#x6597;&amp;#x9C7C;&amp;#x4F1A;&amp;#x5728;&amp;#x4F60;&amp;#x8FDB;&amp;#x5165;&amp;#x76F4;&amp;#x64AD;&amp;#x95F4;&amp;#x4E00;&amp;#x5B9A;&amp;#x65F6;&amp;#x95F4;&amp;#x540E;&amp;#x5F39;&amp;#x51FA;&amp;#x4E00;&amp;#x4E2A;&amp;#x6846;, &amp;#x5982;&amp;#x679C;&amp;#x4F60;&amp;#x5728;&amp;#x">
-<meta name="twitter:image" content="http://blog.imspace.cn/2016/06/09/特殊姿势干掉斗鱼的广告/fuckdouyu.jpg">
+<meta name="twitter:image" content="http://blog.imspace.cn/2016/06/09/特殊姿势干掉斗鱼的广告/img_fuckdouyu.jpg">
 
 
 
@@ -334,7 +334,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">k = <span class="function"><span class="keyword">function</span>(<span class="params">flashID</span>) </span>{</span><br><span class="line">    <span class="keyword">var</span> methodRef, methodName = <span class="built_in">arguments</span>[<span class="number">1</span>],</span><br><span class="line">    params = [].slice.call(<span class="built_in">arguments</span>, <span class="number">2</span>),</span><br><span class="line">    isIE = navigator.appName.indexOf(<span class="string">&quot;Microsoft&quot;</span>) &gt;= <span class="number">0</span>,</span><br><span class="line">    flashObj = isIE ? <span class="built_in">window</span>[flashID] : <span class="built_in">document</span>[flashID];</span><br><span class="line">    flashObj &amp;&amp; (methodRef = flashObj[methodName]) &amp;&amp; methodRef.apply(flashObj, params)</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4ED6;&#x8C03;&#x7528;&#x4E86; [].slice &#x4E8E;&#x662F;&#x601D;&#x8DEF;&#x5C31;&#x662F;&#x5BF9; [].slice patch, patch&#x65B9;&#x6CD5;&#x5982;&#x4E0B;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sliceBackup = <span class="built_in">Array</span>.prototype.slice;</span><br><span class="line"><span class="built_in">Array</span>.prototype.slice = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>[<span class="number">0</span>] &amp;&amp; (<span class="keyword">this</span>[<span class="number">0</span>] == <span class="string">&apos;js_exitFullScreen&apos;</span> || <span class="keyword">this</span>[<span class="number">0</span>] == <span class="string">&apos;js_breakRuleTip&apos;</span>)) {</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">&apos;hook&apos;</span>, <span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">		<span class="keyword">throw</span> <span class="string">&quot;fuck douyu!&quot;</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> sliceBackup.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
 <p>&#x5176;&#x4E2D; this &#x5C31;&#x662F; [].slice.call &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;, &#x4E8E;&#x662F;&#x53EA;&#x8981;&#x68C0;&#x6D4B; <code>this[0]</code> &#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4E0D;&#x662F;&#x5728;&#x9ED1;&#x540D;&#x5355;&#x5C31;&#x597D;&#x4E86;. &#x5728;&#x9ED1;&#x540D;&#x5355;&#x7684;&#x8BDD;&#x76F4;&#x63A5;&#x6254;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x5C31;&#x80FD;&#x4E2D;&#x65AD;&#x6267;&#x884C;.  </p>
-<p><img src="/2016/06/09/&#x7279;&#x6B8A;&#x59FF;&#x52BF;&#x5E72;&#x6389;&#x6597;&#x9C7C;&#x7684;&#x5E7F;&#x544A;/fuckdouyu.jpg" alt=""></p>
+<p><img src="/2016/06/09/&#x7279;&#x6B8A;&#x59FF;&#x52BF;&#x5E72;&#x6389;&#x6597;&#x9C7C;&#x7684;&#x5E7F;&#x544A;/img_fuckdouyu.jpg" alt=""></p>
 
       
     </div>
@@ -360,14 +360,16 @@
           
             <a href="/tags/hook/" rel="tag">#hook</a>
           
-            <a href="/tags/hack/" rel="tag">#hack</a>
-          
         </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/30/联通3G劫持分析/" rel="next" title="联通3G劫持分析">
+                <i class="fa fa-chevron-left"></i> 联通3G劫持分析
+              </a>
             
           </div>
 
@@ -447,7 +449,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -464,7 +466,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

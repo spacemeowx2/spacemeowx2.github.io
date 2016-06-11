@@ -1,0 +1,654 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js,promise," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Promise&amp;#x7B80;&amp;#x4ECB;&amp;#x56E0;&amp;#x4E3A;&amp;#x4E4B;&amp;#x524D;&amp;#x7528;Promise&amp;#x5199;&amp;#x4E1C;&amp;#x897F;&amp;#x611F;&amp;#x89C9;&amp;#x5F88;&amp;#x723D;, &amp;#x6240;&amp;#x4EE5;&amp;#x5E72;&amp;#x8106;&amp;#x8BA9;&amp;#x6574;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Promise大杂烩">
+<meta property="og:url" content="http://blog.imspace.cn/2016/04/15/Promise大杂烩/index.html">
+<meta property="og:site_name" content="空格的空地">
+<meta property="og:description" content="Promise&amp;#x7B80;&amp;#x4ECB;&amp;#x56E0;&amp;#x4E3A;&amp;#x4E4B;&amp;#x524D;&amp;#x7528;Promise&amp;#x5199;&amp;#x4E1C;&amp;#x897F;&amp;#x611F;&amp;#x89C9;&amp;#x5F88;&amp;#x723D;, &amp;#x6240;&amp;#x4EE5;&amp;#x5E72;&amp;#x8106;&amp;#x8BA9;&amp;#x6574;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;">
+<meta property="og:updated_time" content="2016-06-11T12:49:18.331Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Promise大杂烩">
+<meta name="twitter:description" content="Promise&amp;#x7B80;&amp;#x4ECB;&amp;#x56E0;&amp;#x4E3A;&amp;#x4E4B;&amp;#x524D;&amp;#x7528;Promise&amp;#x5199;&amp;#x4E1C;&amp;#x897F;&amp;#x611F;&amp;#x89C9;&amp;#x5F88;&amp;#x723D;, &amp;#x6240;&amp;#x4EE5;&amp;#x5E72;&amp;#x8106;&amp;#x8BA9;&amp;#x6574;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://blog.imspace.cn/2016/04/15/Promise大杂烩/"/>
+
+  <title> Promise大杂烩 | 空格的空地 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">空格的空地</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">3.0</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/2016/06/11/hello-world/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Promise大杂烩
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-15T00:00:00+08:00" content="2016-04-15">
+              2016-04-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index">
+                    <span itemprop="name">tech</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/15/Promise大杂烩/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/Promise大杂烩/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Promise&#x7B80;&#x4ECB;"><a href="#Promise&#x7B80;&#x4ECB;" class="headerlink" title="Promise&#x7B80;&#x4ECB;"></a>Promise&#x7B80;&#x4ECB;</h2><p>&#x56E0;&#x4E3A;&#x4E4B;&#x524D;&#x7528;Promise&#x5199;&#x4E1C;&#x897F;&#x611F;&#x89C9;&#x5F88;&#x723D;, &#x6240;&#x4EE5;&#x5E72;&#x8106;&#x8BA9;&#x6574;&#x4E2A;&#x9879;&#x76EE;Promise&#x5316;..<br>js&#x4E2D;&#x5927;&#x90E8;&#x5206;&#x8D39;&#x65F6;&#x52A8;&#x4F5C;&#x90FD;&#x662F;&#x5F02;&#x6B65;&#x7684;, &#x5E76;&#x4E14;&#x5927;&#x591A;&#x901A;&#x8FC7;callback&#x6765;&#x5904;&#x7406;, &#x5199;&#x8FC7;nodejs&#x7684;&#x5927;&#x6982;&#x90FD;&#x9047;&#x5230;&#x8FC7;&#x2019;&#x56DE;&#x8C03;&#x5730;&#x72F1;&#x2019;&#x2026;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">loadImg(<span class="string">&apos;a.jpg&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    loadImg(<span class="string">&apos;b.jpg&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">        loadImg(<span class="string">&apos;c.jpg&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&apos;all done!&apos;</span>); <span class="comment">//&#x5475;&#x5475;...</span></span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line">});</span><br></pre></td></tr></table></figure></p>
+<p>Promise&#x662F;&#x4E00;&#x79CD;&#x89C4;&#x8303;, &#x628A;&#x5D4C;&#x5957;&#x7684;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x53D8;&#x6210;&#x4E86;&#x7EBF;&#x6027;, &#x6BD4;&#x5982;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x6539;&#x6210;Promise&#x53EF;&#x80FD;&#x662F;&#x8FD9;&#x6837;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">loadImg(<span class="string">&apos;a.jpg&apos;</span>).then(</span><br><span class="line">    () =&gt; loadImg(<span class="string">&apos;b.jpg&apos;</span>)</span><br><span class="line">).then(</span><br><span class="line">    () =&gt; loadImg(<span class="string">&apos;c.jpg&apos;</span>)</span><br><span class="line">).then(</span><br><span class="line">    () =&gt; <span class="built_in">console</span>.log(<span class="string">&apos;all done!&apos;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>loadImg&#x5728;&#x6B64;&#x5904;&#x662F;&#x4E2A;Promise&#x5DE5;&#x5382;, &#x6839;&#x636E;&#x53C2;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;Promise<br>&#x8FD9;&#x91CC;&#x7684;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x4E0D;&#x80FD;&#x7701;&#x7565;, &#x56E0;&#x4E3A;Promise&#x5BF9;&#x8C61;&#x5728;new&#x7684;&#x65F6;&#x5019;&#x5C31;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x5185;&#x90E8;&#x7684;&#x4EE3;&#x7801;.&#x6240;&#x4EE5;then&#x91CC;&#x7684;&#x4E1C;&#x897F;&#x53EF;&#x4EE5;&#x53EB;&#x505A;Promise&#x5DE5;&#x5382;&#x7684;&#x5DE5;&#x5382;&#x2026;<br>then&#x7684;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4F20;&#x8FDB;&#x53BB;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x4F20;Promise&#x5DE5;&#x5382;, &#x5F53;then&#x63A5;&#x53D7;&#x5230;&#x666E;&#x901A;&#x51FD;&#x6570;&#x65F6;&#x4F1A;&#x76F4;&#x63A5;&#x8FD0;&#x884C;, &#x5E76;&#x653E;&#x5230;try&#x5757;&#x91CC;, &#x9047;&#x5230;&#x9519;&#x8BEF;&#x5C31;reject&#x51FA;&#x53BB;  </p>
+<p>&#x4E00;&#x4E2A;Promise&#x4E00;&#x822C;&#x662F;&#x8FD9;&#x6837;&#x6784;&#x9020;&#x7684;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>{</span><br><span class="line">    <span class="comment">//do something here</span></span><br><span class="line">})</span><br></pre></td></tr></table></figure></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x51FD;&#x6570;&#x4E2D;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;, &#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x662F;&#x56DE;&#x8C03;&#x51FD;&#x6570;, &#x7B2C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x65F6;&#x8C03;&#x7528;, &#x5F53;&#x5931;&#x8D25;&#x662F;&#x8C03;&#x7528;reject, &#x8FD9;&#x5C31;&#x662F;Promise&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;: &#x9047;&#x5230;reject&#x505C;&#x4E0B;&#x6765;, &#x627E;&#x5230;catch&#x51FD;&#x6570;, &#x6216;&#x8005;&#x4E00;&#x76F4;resolve, &#x76F4;&#x5230;&#x7ED3;&#x675F;  </p>
+<h2 id="bluebird-promisifyAll"><a href="#bluebird-promisifyAll" class="headerlink" title="bluebird.promisifyAll"></a>bluebird.promisifyAll</h2><p>(&#x56E0;&#x4E3A;&#x5728;require&#x7684;&#x65F6;&#x5019;&#x628A;bluebird&#x547D;&#x540D;&#x6210;&#x4E86;Promise, &#x6240;&#x4EE5;&#x4EE3;&#x7801;&#x4E2D;&#x5199;&#x4F5C;Promise.promisifyAll)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="built_in">Promise</span> = <span class="built_in">require</span>(<span class="string">&quot;bluebird&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> jsdom = <span class="built_in">Promise</span>.promisifyAll(<span class="built_in">require</span>(<span class="string">&apos;jsdom&apos;</span>));</span><br></pre></td></tr></table></figure></p>
+<p>Promise.promisify&#x5C06;&#x4E00;&#x4E2A; node callback &#x578B;&#x7684;&#x51FD;&#x6570;&#x5305;&#x88C5;&#x6210;Promise&#x578B;&#x7684;&#x51FD;&#x6570;, promisifyAll&#x5C06;&#x5BF9;&#x8C61;&#x5185;&#x7684;&#x6240;&#x6709;&#x51FD;&#x6570;&#x8FDB;&#x884C;promisify&#x5C06;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;, &#x5E76;&#x628A;&#x5305;&#x88C5;&#x540E;&#x7684;&#x51FD;&#x6570;&#x540D;&#x540E;&#x52A0;&#x4E0A;Async  </p>
+<h2 id="Promise&#x662F;&#x4E2A;&#x94FE;"><a href="#Promise&#x662F;&#x4E2A;&#x94FE;" class="headerlink" title="Promise&#x662F;&#x4E2A;&#x94FE;"></a>Promise&#x662F;&#x4E2A;&#x94FE;</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> jqueryHTML = <span class="function"><span class="keyword">function</span> (<span class="params">html, selector</span>) </span>{</span><br><span class="line">    <span class="keyword">let</span> ret = jsdom.envAsync(html)</span><br><span class="line">    .then(jquery);</span><br><span class="line">    <span class="keyword">if</span> (!isUndefined(selector))</span><br><span class="line">        ret = ret.then($ =&gt; $(selector));</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x8FD9;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;jQuery&#x5BF9;&#x8C61;&#x7684;&#x51FD;&#x6570;, ret&#x662F;&#x4E2A;Promise&#x94FE;, &#x5728;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x4E0B;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x662F;&#x5426;&#x6267;&#x884C;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x2019;$ =&gt; $(selector)&#x2019;  </p>
+<h2 id="Promise&#x7684;&#x7ED3;&#x5408;"><a href="#Promise&#x7684;&#x7ED3;&#x5408;" class="headerlink" title="Promise&#x7684;&#x7ED3;&#x5408;"></a>Promise&#x7684;&#x7ED3;&#x5408;</h2><p>Promise&#x4F5C;&#x4E3A;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;, &#x81EA;&#x7136;&#x8981;&#x5E94;&#x5BF9;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x573A;&#x666F;. &#x5982;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x8BB8;&#x591A;&#x64CD;&#x4F5C;, &#x7B49;&#x5230;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x5B8C;&#x6210;, &#x53EF;&#x4EE5;&#x7528;Promise.all<br>&#x4E4B;&#x524D;&#x90A3;&#x4E2A;&#x4F8B;&#x5B50;&#x4E0D;&#x591F;&#x5B9E;&#x9645;, &#x4E00;&#x822C;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;&#x90FD;&#x662F;&#x4E00;&#x5806;&#x4E00;&#x8D77;&#x52A0;&#x8F7D;&#x7684;, &#x5F88;&#x5C11;&#x4E00;&#x4E2A;&#x4E2A;&#x52A0;&#x8F7D;, &#x6BD5;&#x7ADF;&#x4E0D;&#x662F;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([</span><br><span class="line">    loadImg(<span class="string">&apos;a.jpg&apos;</span>),</span><br><span class="line">    loadImg(<span class="string">&apos;b.jpg&apos;</span>),</span><br><span class="line">    loadImg(<span class="string">&apos;c.jpg&apos;</span>)</span><br><span class="line">]).then(() =&gt; {</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&apos;all done!&apos;</span>);</span><br><span class="line">})</span><br></pre></td></tr></table></figure></p>
+<p>&#x6709;&#x65F6;&#x53EA;&#x9700;&#x8981;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5B8C;&#x6210;&#x5C31;&#x7EE7;&#x7EED;, &#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Promise.race  </p>
+<p>&#x5728;&#x6211;&#x7684;&#x4E00;&#x4E2A;Chrome&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x4E2D;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5C11;&#x89C1;&#x7684;&#x60C5;&#x51B5;, &#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E2A;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;, &#x76F4;&#x5230;&#x9047;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x6210;&#x529F;&#x7684;&#x7ED3;&#x675F;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">untilFirstResolve</span>(<span class="params">list</span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; {</span><br><span class="line">        <span class="keyword">var</span> itr = list[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line">        <span class="keyword">var</span> v, next;</span><br><span class="line">        next = (e) =&gt; {</span><br><span class="line">            v = itr.next()</span><br><span class="line">            <span class="keyword">if</span> (!v.done) {</span><br><span class="line">                v.value().then(resolve, next); <span class="comment">//&#x52A0;&#x8F7D;&#x6210;&#x529F;&#x5C31;resolve, &#x5931;&#x8D25;&#x5C31;&#x5C1D;&#x8BD5;&#x4E0B;&#x4E00;&#x4E2A;</span></span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                reject(); <span class="comment">//&#x5982;&#x679C;&#x8FED;&#x4EE3;&#x5B8C;&#x8FD8;&#x6CA1;&#x6210;&#x529F;&#x7684;&#x5C31;reject&#x629B;&#x51FA;&#x9519;&#x8BEF;</span></span><br><span class="line">            }</span><br><span class="line">        };</span><br><span class="line">        next();</span><br><span class="line">    });</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<h2 id="&#x540E;&#x8BB0;"><a href="#&#x540E;&#x8BB0;" class="headerlink" title="&#x540E;&#x8BB0;"></a>&#x540E;&#x8BB0;</h2><p>Promise&#x7528;&#x8D77;&#x6765;&#x5F88;&#x7075;&#x6D3B;, &#x5F88;&#x65B9;&#x4FBF;&#x6DFB;&#x52A0;&#x6B65;&#x9AA4;(&#x53EA;&#x8981;&#x5728;&#x4E24;&#x4E2A;then&#x4E4B;&#x95F4;&#x52A0;&#x4E00;&#x4E2A;then&#x5C31;&#x80FD;&#x6DFB;&#x52A0;).<br>&#x542C;&#x8BF4;async&#x548C;await&#x5904;&#x7406;&#x5F02;&#x6B65;&#x66F4;&#x52A0;&#x65B9;&#x4FBF;, &#x4EE5;&#x540E;&#x6709;&#x7A7A;&#x56F4;&#x89C2;&#x4E00;&#x4E0B;. </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/promise/" rel="tag">#promise</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/" rel="next" title="sif@bctf - 黑箱测试 & 插桩调试">
+                <i class="fa fa-chevron-left"></i> sif@bctf - 黑箱测试 & 插桩调试
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/22/水/" rel="prev" title="水">
+                水 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/15/Promise大杂烩/"
+           data-title="Promise大杂烩" data-url="http://blog.imspace.cn/2016/04/15/Promise大杂烩/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Space" />
+          <p class="site-author-name" itemprop="name">Space</p>
+          <p class="site-description motion-element" itemprop="description">这已经是第三个博客了</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise简介"><span class="nav-number">1.</span> <span class="nav-text">Promise简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bluebird-promisifyAll"><span class="nav-number">2.</span> <span class="nav-text">bluebird.promisifyAll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise是个链"><span class="nav-number">3.</span> <span class="nav-text">Promise是个链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise的结合"><span class="nav-number">4.</span> <span class="nav-text">Promise的结合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">5.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Space</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"imspace3"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
