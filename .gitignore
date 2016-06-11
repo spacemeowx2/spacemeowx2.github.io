@@ -1,0 +1,7 @@
+node_modules/
+.deploy_git/
+public/
+
+db.json
+
+source/_posts
