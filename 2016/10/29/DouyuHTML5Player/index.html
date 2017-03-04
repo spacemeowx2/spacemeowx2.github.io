@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://blog.imspace.cn/2016/10/29/DouyuHTML5Player/module17.png">
 <meta property="og:image" content="http://blog.imspace.cn/2016/10/29/DouyuHTML5Player/emptylist.png">
 <meta property="og:image" content="http://blog.imspace.cn/2016/10/29/DouyuHTML5Player/chatmsg.png">
-<meta property="og:updated_time" content="2016-10-30T06:03:51.000Z">
+<meta property="og:updated_time" content="2017-03-03T11:43:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编写斗鱼HTML5播放器中遇到的各种问题">
 <meta name="twitter:description" content="&amp;#x56E0;&amp;#x4E3A; flv.js &amp;#x5F00;&amp;#x6E90;&amp;#x4E86;,&amp;#x82B1;&amp;#x4E86;&amp;#x51E0;&amp;#x5929;&amp;#x5199;&amp;#x4E86;&amp;#x4E2A;&amp;#x6597;&amp;#x9C7C;&amp;#x7684;HTML5&amp;#x64AD;&amp;#x653E;&amp;#x5668;, &amp;#x652F;&amp;#x6301;&amp;#x5F39;&amp;#x5E55;, &amp;#x8FD">
@@ -428,6 +428,9 @@
 <p><a href="https://github.com/spacemeowx2/DouyuHTML5Player/blob/b5a54240f1b31d53a8530af83444b10027fe6dca/src/douyuClient.js#L283" target="_blank" rel="external">Hook &#x4EE3;&#x7801;</a></p>
 <p>Flash &#x4F20;&#x7ED9; JS &#x7684;&#x4E8B;&#x4EF6;&#x901A;&#x8FC7; <em>ACJ</em> &#x8C03;&#x7528;, &#x56E0;&#x6B64;&#x6211;&#x53EA;&#x8981;&#x8C03;&#x7528; <em>ACJ</em> &#x548C;&#x9002;&#x5408;&#x7684;&#x53C2;&#x6570;&#x5C31;&#x80FD;&#x8BA9;&#x53F3;&#x8FB9;&#x663E;&#x793A;&#x51FA;&#x5F39;&#x5E55;.</p>
 <h1 id="&#x6E32;&#x67D3;&#x5F39;&#x5E55;"><a href="#&#x6E32;&#x67D3;&#x5F39;&#x5E55;" class="headerlink" title="&#x6E32;&#x67D3;&#x5F39;&#x5E55;"></a>&#x6E32;&#x67D3;&#x5F39;&#x5E55;</h1><p>&#x4E0A;&#x4E00;&#x8282;&#x53EA;&#x662F;&#x8BA9;&#x5F39;&#x5E55;&#x80FD;&#x4F20;&#x5230;&#x7F51;&#x9875;&#x4E2D;&#x6765;, &#x800C;&#x64AD;&#x653E;&#x5668;&#x4E0A;&#x5E76;&#x6CA1;&#x6709;&#x5F39;&#x5E55;, &#x8FD9;&#x4E00;&#x8282;&#x5C31;&#x6765;&#x663E;&#x793A;&#x4E00;&#x6CE2;&#x5F39;&#x5E55;.</p>
+<!--渲染弹幕我使用了 CSS 的 transition, 因此让弹幕移动起来只要设置好 `transform` 属性就好.
+
+为了让弹幕不追尾, 必须计算每次弹幕要从哪行发出来. (顺便吐槽一下某直播平台经常追尾).-->
 <p>&#x2013; &#x672A;&#x5B8C;&#x5F85;&#x7EED; &#x2013;</p>
 
       
@@ -568,7 +571,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -585,7 +588,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
