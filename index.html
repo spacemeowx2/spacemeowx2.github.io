@@ -355,41 +355,12 @@
 
       
         
-          
-            <h1 id="IDA&#x6280;&#x5DE7;"><a href="#IDA&#x6280;&#x5DE7;" class="headerlink" title="IDA&#x6280;&#x5DE7;"></a>IDA&#x6280;&#x5DE7;</h1><p>IDA&#x662F;&#x4E2A;&#x597D;&#x4E1C;&#x897F;, &#x4E0D;&#x8FC7;&#x4ED6;&#x8FD8;&#x4E0D;&#x591F;&#x667A;&#x80FD;, &#x8BB8;&#x591A;&#x65F6;&#x5019;&#x9700;&#x8981;&#x8C03;&#x6559;&#x4E00;&#x4E0B;&#x624D;&#x597D;&#x7528;.</p>
-<p>&#x8FD9;&#x91CC;&#x62FF; ZCTF2017 &#x7684; misc400 &#x7684;&#x4E00;&#x4E2A;&#x5C0F;&#x7A0B;&#x5E8F; <a href="https://ojiju7xvu.qnssl.com/blog/start%20here.exe" target="_blank" rel="external">start here.exe</a> &#x4E3E;&#x4F8B;.</p>
-<p>&#x4EE5;&#x4E0B;&#x662F; ida &#x4E00;&#x5F00;&#x8D77;&#x6765; F5 &#x7684;&#x7ED3;&#x679C;, &#x672A;&#x505A;&#x4EFB;&#x4F55;&#x6539;&#x52A8;.</p>
-<p><img src="/2017/03/03/ida_skill/01.png" alt=""></p>
-<p>&#x5728; 0x4010B0 &#x51FD;&#x6570;&#x91CC;, &#x5927;&#x81F4;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x8C03;&#x7528;&#x4E86; cin, &#x628A;&#x8F93;&#x5165;&#x653E;&#x5230;&#x4E86; <code>Memory</code> &#x53D8;&#x91CF;&#x91CC;. &#x56FE;&#x91CC;&#x7684;&#x5FAA;&#x73AF;&#x4F1A;&#x5728;&#x8F93;&#x5165;&#x4E0D;&#x7B49;&#x4E8E; <code>*(&amp;v15 + v4)</code> &#x65F6;&#x9000;&#x51FA;&#x5E76;&#x8F93;&#x51FA; &#x201C;Wrong&#x201D;.</p>
-<p>&#x9996;&#x5148;&#x5148;&#x628A; v15 &#x53D8;&#x6210;&#x6570;&#x7EC4;, &#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;:</p>
-<p>&#x9996;&#x5148;&#x628A;&#x5149;&#x6807;&#x79FB;&#x5230; v15 &#x4E0A;, &#x6309; <code>Enter</code> &#x6216;&#x8005;&#x53CC;&#x51FB; v15</p>
-<p><img src="/2017/03/03/ida_skill/02.png" alt=""></p>
-<p>&#x7136;&#x540E;&#x8DF3;&#x8F6C;&#x5230;&#x8FD9;&#x91CC;, &#x6309; <code>*</code> &#x53F7;</p>
-<p><img src="/2017/03/03/ida_skill/03.png" alt=""></p>
-<p>&#x6839;&#x636E;&#x6C47;&#x7F16;&#x5224;&#x65AD;, &#x8FD9;&#x91CC;&#x6709; 44 &#x4E2A; DWORD. &#x5982;&#x679C;&#x7C7B;&#x578B;&#x548C;&#x60F3;&#x8981;&#x7684;&#x4E0D;&#x4E00;&#x6837;, &#x53EF;&#x4EE5;&#x5148;&#x5728; Stack &#x4E0A;&#x9762;&#x5BF9;&#x7740;&#x53D8;&#x91CF;&#x6309; <code>D</code>, &#x4F7F;&#x7C7B;&#x578B;&#x6539;&#x53D8;&#x518D;&#x6309; <code>*</code>.</p>
-<p><img src="/2017/03/03/ida_skill/04.png" alt=""></p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x6362;&#x56DE;&#x4F2A;&#x4EE3;&#x7801;&#x754C;&#x9762;&#x5C31;&#x80FD;&#x770B;&#x5230;&#x8FD9;&#x6837;&#x4E86;.</p>
-<p><img src="/2017/03/03/ida_skill/05.png" alt=""></p>
-<p>&#x540C;&#x65F6;, &#x4E4B;&#x524D;&#x7684; <code>*(&amp;v15 + v4)</code> &#x4E5F;&#x53D8;&#x6210;&#x4E86; <code>v15[v4]</code>.</p>
-<p><img src="/2017/03/03/ida_skill/06.png" alt=""></p>
-<p>&#x73B0;&#x5728;&#x5DE6;&#x8FB9;&#x8FD9;&#x4E2A; sub_401000 &#x91CC;&#x7684;&#x53C2;&#x6570;&#x8FD8;&#x662F;&#x5F88;&#x5947;&#x602A;.</p>
-<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5BF9; v5 &#x8FDB;&#x884C;&#x5206;&#x6790;. v5 &#x4E00;&#x5F00;&#x59CB;&#x662F;&#x88AB; ida &#x5206;&#x6790;&#x6210; <code>void **</code> &#x7C7B;&#x578B;, &#x800C;&#x5BF9; v5 &#x7684;&#x6240;&#x6709;&#x8BFB;&#x53D6;&#x524D;&#x9762;&#x90FD;&#x6709;&#x4E2A; <code>_BYTE</code> &#x7C7B;&#x578B;&#x8F6C;&#x6362;, &#x8BF4;&#x660E;&#x4ED6;&#x7684;&#x7C7B;&#x578B;&#x5E94;&#x8BE5;&#x662F; <code>_BYTE*</code> &#x624D;&#x5BF9;. &#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x5BF9; v5 &#x7684;&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x4FEE;&#x6539;: &#x5149;&#x6807;&#x79FB;&#x5230; v5, &#x7136;&#x540E;&#x6309; <code>Y</code> &#x952E;, &#x8F93;&#x5165; <code>_BYTE*</code>, &#x518D;&#x6309;&#x56DE;&#x8F66;.</p>
-<p><img src="/2017/03/03/ida_skill/07.png" alt=""></p>
-<p>&#x7136;&#x540E;&#x4F2A;&#x4EE3;&#x7801;&#x5C31;&#x53D8;&#x6210;&#x4E86;&#x8FD9;&#x6837;, &#x5DF2;&#x7ECF;&#x6BD4;&#x4E00;&#x5F00;&#x59CB;&#x597D;&#x770B;&#x591A;&#x4E86;.</p>
-<p>&#x4E0D;&#x8FC7;&#x8FD8;&#x662F;&#x5F88;&#x5947;&#x602A;, &#x4ECE;&#x903B;&#x8F91;&#x4E0A;&#x6765;&#x8BF4;, v5 &#x5E94;&#x8BE5;&#x5C31;&#x662F; 1 &#x5B57;&#x8282;&#x7684;&#x6574;&#x6570;, &#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x5BF9;&#x4ED6; &gt;&gt; 32? &#x539F;&#x56E0;&#x5176;&#x5B9E;&#x662F;&#x8FD9;&#x91CC;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x662F;&#x4E24;&#x4E2A; DWORD, &#x800C;&#x662F;&#x4E00;&#x4E2A; QWORD. &#x56E0;&#x4E3A;&#x662F;32&#x4F4D;&#x7A0B;&#x5E8F;&#x6240;&#x4EE5;&#x624D;&#x7528;&#x4E86;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4F20;&#x53C2;.</p>
-<p>&#x4E3A;&#x4E86;&#x6539;&#x53D8;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;, &#x9700;&#x8981;&#x628A;&#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230; <code>sub_401000</code> &#x4E0A;, &#x7136;&#x540E;&#x6309; <code>Y</code>.</p>
-<p><img src="/2017/03/03/ida_skill/08.png" alt=""></p>
-<p>&#x4FEE;&#x6539;&#x91CC;&#x9762;&#x7684;&#x4E24;&#x4E2A; <code>_DWORD</code>, &#x53D8;&#x6210;&#x8FD9;&#x6837;:</p>
-<p><img src="/2017/03/03/ida_skill/09.png" alt=""></p>
-<p>&#x6700;&#x540E;, &#x4F2A;&#x4EE3;&#x7801;&#x5C31;&#x5F88;&#x597D;&#x770B;&#x4E86;</p>
-<p><img src="/2017/03/03/ida_skill/10.png" alt=""></p>
-<p>&#x548C;&#x4E00;&#x5F00;&#x59CB;&#x6BD4;&#x6BD4;</p>
-<p><img src="/2017/03/03/ida_skill/01.png" alt=""></p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x4E0D;&#x7528;&#x770B;&#x4E86;, &#x53EF;&#x4EE5;&#x8BA4;&#x4E3A; <code>sub_401000</code> &#x662F;&#x4E2A;&#x6620;&#x5C04;&#x51FD;&#x6570;, &#x628A;&#x6BCF;&#x4E2A;&#x8F93;&#x5165;&#x7684; char &#x6620;&#x5C04;&#x5230;&#x4E00;&#x4E2A; int &#x4E0A;, &#x6700;&#x540E;&#x518D;&#x548C;&#x5199;&#x6B7B;&#x7684;&#x6570;&#x7EC4;&#x6BD4;&#x8F83;.</p>
-<p>&#x987A;&#x4FBF;&#x518D;&#x7ED9;&#x4E00;&#x4E2A; idapython &#x811A;&#x672C;, &#x7528;&#x6765;&#x751F;&#x6210;&#x8FD9;&#x4E2A;&#x6620;&#x5C04;&#x8868;.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">stupidmap = Appcall.proto(<span class="string">&apos;stupidmap&apos;</span>, <span class="string">&quot;int __cdecl stupidmap(__int64 a1);&quot;</span>)</span><br><span class="line"></span><br><span class="line">out = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">    out.append(stupidmap(i))</span><br><span class="line"><span class="keyword">print</span> out</span><br></pre></td></tr></table></figure>
-
-          
+          <h1 id="IDA&#x6280;&#x5DE7;"><a href="#IDA&#x6280;&#x5DE7;" class="headerlink" title="IDA&#x6280;&#x5DE7;"></a>IDA&#x6280;&#x5DE7;</h1><p>IDA&#x662F;&#x4E2A;&#x597D;&#x4E1C;&#x897F;, &#x4E0D;&#x8FC7;&#x4ED6;&#x8FD8;&#x4E0D;&#x591F;&#x667A;&#x80FD;, &#x8BB8;&#x591A;&#x65F6;&#x5019;&#x9700;&#x8981;&#x8C03;&#x6559;&#x4E00;&#x4E0B;&#x624D;&#x597D;&#x7528;.</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/03/ida_skill/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
