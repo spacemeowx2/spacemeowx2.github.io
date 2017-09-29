@@ -246,7 +246,7 @@ baidu_analytics: 5598b004247fc72850510b5f025a94ab
 #duoshuo_shortname:
 
 # Disqus
-#disqus_shortname:
+disqus_shortname: imspace
 
 # Baidu Share
 # Available value:
@@ -276,11 +276,11 @@ google_analytics: UA-73762389-3
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
-duoshuo_info:
-  ua_enable: true
-  admin_enable: true
-  user_id: 504804
-  admin_nickname: 空格哥哥
+#duoshuo_info:
+#  ua_enable: true
+#  admin_enable: true
+#  user_id: 504804
+#  admin_nickname: 空格哥哥
 
 
 # Facebook SDK Support.

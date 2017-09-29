@@ -9,8 +9,6 @@ description: 这已经是第三个博客了
 author: Space
 language: zh-Hans
 timezone:
-duoshuo_shortname: imspace3
-duoshuo_share: true
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
