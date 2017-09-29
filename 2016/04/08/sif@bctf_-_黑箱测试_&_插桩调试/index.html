@@ -85,11 +85,13 @@
 
 
 <meta name="description" content="&amp;#x6E05;&amp;#x660E;&amp;#x7814;&amp;#x7A76;&amp;#x4E86;&amp;#x70B9;Flash, &amp;#x4F46;&amp;#x662F;&amp;#x6CA1;&amp;#x5565;&amp;#x8FDB;&amp;#x5C55;..&amp;#x5C31;&amp;#x8BB2;&amp;#x4E00;&amp;#x8BB2;&amp;#x4E0A;&amp;#x6B21;bctf&amp;#x7684;&amp;#x9898;&amp;#x597D;&amp;#x4E86;, &amp;#x611F;&amp;">
+<meta name="keywords" content="ctf,writeup">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sif@bctf - 黑箱测试 & 插桩调试">
+<meta property="og:title" content="sif@bctf - 黑箱测试 &amp; 插桩调试">
 <meta property="og:url" content="http://blog.imspace.cn/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/index.html">
 <meta property="og:site_name" content="空格的空地">
 <meta property="og:description" content="&amp;#x6E05;&amp;#x660E;&amp;#x7814;&amp;#x7A76;&amp;#x4E86;&amp;#x70B9;Flash, &amp;#x4F46;&amp;#x662F;&amp;#x6CA1;&amp;#x5565;&amp;#x8FDB;&amp;#x5C55;..&amp;#x5C31;&amp;#x8BB2;&amp;#x4E00;&amp;#x8BB2;&amp;#x4E0A;&amp;#x6B21;bctf&amp;#x7684;&amp;#x9898;&amp;#x597D;&amp;#x4E86;, &amp;#x611F;&amp;">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.imspace.cn/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/img_01.png">
 <meta property="og:image" content="http://blog.imspace.cn/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/img_02.png">
 <meta property="og:image" content="http://blog.imspace.cn/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/img_03.png">
@@ -99,9 +101,9 @@
 <meta property="og:image" content="http://blog.imspace.cn/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/img_07.png">
 <meta property="og:image" content="http://blog.imspace.cn/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/img_08.png">
 <meta property="og:image" content="http://blog.imspace.cn/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/img_09.png">
-<meta property="og:updated_time" content="2016-06-12T17:30:38.960Z">
+<meta property="og:updated_time" content="2016-06-12T17:30:38.961Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sif@bctf - 黑箱测试 & 插桩调试">
+<meta name="twitter:title" content="sif@bctf - 黑箱测试 &amp; 插桩调试">
 <meta name="twitter:description" content="&amp;#x6E05;&amp;#x660E;&amp;#x7814;&amp;#x7A76;&amp;#x4E86;&amp;#x70B9;Flash, &amp;#x4F46;&amp;#x662F;&amp;#x6CA1;&amp;#x5565;&amp;#x8FDB;&amp;#x5C55;..&amp;#x5C31;&amp;#x8BB2;&amp;#x4E00;&amp;#x8BB2;&amp;#x4E0A;&amp;#x6B21;bctf&amp;#x7684;&amp;#x9898;&amp;#x597D;&amp;#x4E86;, &amp;#x611F;&amp;">
 <meta name="twitter:image" content="http://blog.imspace.cn/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/img_01.png">
 
@@ -115,8 +117,8 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 504804,
-      author: '空格哥哥'
+      userId: undefined,
+      author: '博主'
     }
   };
 </script>
@@ -337,7 +339,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -430,25 +432,6 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/"
-     data-title="sif@bctf - 黑箱测试 & 插桩调试"
-     data-content=""
-     data-url="http://blog.imspace.cn/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
-      
     </div>
   </div>
 
@@ -460,8 +443,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/"
-           data-title="sif@bctf - 黑箱测试 & 插桩调试" data-url="http://blog.imspace.cn/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -727,32 +713,30 @@
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"imspace3"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'imspace';
+      var disqus_identifier = '2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/';
+      var disqus_title = "sif@bctf - 黑箱测试 & 插桩调试";
+      var disqus_url = 'http://blog.imspace.cn/2016/04/08/sif@bctf_-_黑箱测试_&_插桩调试/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
       
-      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js"></script>
-    
+        run_disqus_script('embed.js');
+      
+    </script>
   
-
-
 
 
 

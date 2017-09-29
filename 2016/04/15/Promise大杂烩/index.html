@@ -85,11 +85,13 @@
 
 
 <meta name="description" content="Promise&amp;#x7B80;&amp;#x4ECB;&amp;#x56E0;&amp;#x4E3A;&amp;#x4E4B;&amp;#x524D;&amp;#x7528;Promise&amp;#x5199;&amp;#x4E1C;&amp;#x897F;&amp;#x611F;&amp;#x89C9;&amp;#x5F88;&amp;#x723D;, &amp;#x6240;&amp;#x4EE5;&amp;#x5E72;&amp;#x8106;&amp;#x8BA9;&amp;#x6574;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;">
+<meta name="keywords" content="js,promise">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Promise大杂烩">
 <meta property="og:url" content="http://blog.imspace.cn/2016/04/15/Promise大杂烩/index.html">
 <meta property="og:site_name" content="空格的空地">
 <meta property="og:description" content="Promise&amp;#x7B80;&amp;#x4ECB;&amp;#x56E0;&amp;#x4E3A;&amp;#x4E4B;&amp;#x524D;&amp;#x7528;Promise&amp;#x5199;&amp;#x4E1C;&amp;#x897F;&amp;#x611F;&amp;#x89C9;&amp;#x5F88;&amp;#x723D;, &amp;#x6240;&amp;#x4EE5;&amp;#x5E72;&amp;#x8106;&amp;#x8BA9;&amp;#x6574;&amp;#x4E2A;&amp;#x9879;&amp;#x76EE;">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2016-06-12T17:30:30.345Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise大杂烩">
@@ -105,8 +107,8 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 504804,
-      author: '空格哥哥'
+      userId: undefined,
+      author: '博主'
     }
   };
 </script>
@@ -327,7 +329,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016/04/15/Promise大杂烩/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/Promise大杂烩/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/15/Promise大杂烩/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -355,18 +357,18 @@
       
 
       
-        <h2 id="Promise&#x7B80;&#x4ECB;"><a href="#Promise&#x7B80;&#x4ECB;" class="headerlink" title="Promise&#x7B80;&#x4ECB;"></a>Promise&#x7B80;&#x4ECB;</h2><p>&#x56E0;&#x4E3A;&#x4E4B;&#x524D;&#x7528;Promise&#x5199;&#x4E1C;&#x897F;&#x611F;&#x89C9;&#x5F88;&#x723D;, &#x6240;&#x4EE5;&#x5E72;&#x8106;&#x8BA9;&#x6574;&#x4E2A;&#x9879;&#x76EE;Promise&#x5316;..<br>js&#x4E2D;&#x5927;&#x90E8;&#x5206;&#x8D39;&#x65F6;&#x52A8;&#x4F5C;&#x90FD;&#x662F;&#x5F02;&#x6B65;&#x7684;, &#x5E76;&#x4E14;&#x5927;&#x591A;&#x901A;&#x8FC7;callback&#x6765;&#x5904;&#x7406;, &#x5199;&#x8FC7;nodejs&#x7684;&#x5927;&#x6982;&#x90FD;&#x9047;&#x5230;&#x8FC7;&#x2019;&#x56DE;&#x8C03;&#x5730;&#x72F1;&#x2019;&#x2026;<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">loadImg(<span class="string">&apos;a.jpg&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    loadImg(<span class="string">&apos;b.jpg&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">        loadImg(<span class="string">&apos;c.jpg&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&apos;all done!&apos;</span>); <span class="comment">//&#x5475;&#x5475;...</span></span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line">});</span><br></pre></td></tr></table></figure></p>
-<p>Promise&#x662F;&#x4E00;&#x79CD;&#x89C4;&#x8303;, &#x628A;&#x5D4C;&#x5957;&#x7684;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x53D8;&#x6210;&#x4E86;&#x7EBF;&#x6027;, &#x6BD4;&#x5982;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x6539;&#x6210;Promise&#x53EF;&#x80FD;&#x662F;&#x8FD9;&#x6837;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">loadImg(<span class="string">&apos;a.jpg&apos;</span>).then(</span><br><span class="line">    () =&gt; loadImg(<span class="string">&apos;b.jpg&apos;</span>)</span><br><span class="line">).then(</span><br><span class="line">    () =&gt; loadImg(<span class="string">&apos;c.jpg&apos;</span>)</span><br><span class="line">).then(</span><br><span class="line">    () =&gt; <span class="built_in">console</span>.log(<span class="string">&apos;all done!&apos;</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+        <h2 id="Promise&#x7B80;&#x4ECB;"><a href="#Promise&#x7B80;&#x4ECB;" class="headerlink" title="Promise&#x7B80;&#x4ECB;"></a>Promise&#x7B80;&#x4ECB;</h2><p>&#x56E0;&#x4E3A;&#x4E4B;&#x524D;&#x7528;Promise&#x5199;&#x4E1C;&#x897F;&#x611F;&#x89C9;&#x5F88;&#x723D;, &#x6240;&#x4EE5;&#x5E72;&#x8106;&#x8BA9;&#x6574;&#x4E2A;&#x9879;&#x76EE;Promise&#x5316;..<br>js&#x4E2D;&#x5927;&#x90E8;&#x5206;&#x8D39;&#x65F6;&#x52A8;&#x4F5C;&#x90FD;&#x662F;&#x5F02;&#x6B65;&#x7684;, &#x5E76;&#x4E14;&#x5927;&#x591A;&#x901A;&#x8FC7;callback&#x6765;&#x5904;&#x7406;, &#x5199;&#x8FC7;nodejs&#x7684;&#x5927;&#x6982;&#x90FD;&#x9047;&#x5230;&#x8FC7;&#x2019;&#x56DE;&#x8C03;&#x5730;&#x72F1;&#x2019;&#x2026;<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">loadImg(<span class="string">&apos;a.jpg&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</div><div class="line">    loadImg(<span class="string">&apos;b.jpg&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</div><div class="line">        loadImg(<span class="string">&apos;c.jpg&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">&apos;all done!&apos;</span>); <span class="comment">//&#x5475;&#x5475;...</span></div><div class="line">        });</div><div class="line">    });</div><div class="line">});</div></pre></td></tr></table></figure></p>
+<p>Promise&#x662F;&#x4E00;&#x79CD;&#x89C4;&#x8303;, &#x628A;&#x5D4C;&#x5957;&#x7684;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x53D8;&#x6210;&#x4E86;&#x7EBF;&#x6027;, &#x6BD4;&#x5982;&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x6539;&#x6210;Promise&#x53EF;&#x80FD;&#x662F;&#x8FD9;&#x6837;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">loadImg(<span class="string">&apos;a.jpg&apos;</span>).then(</div><div class="line">    () =&gt; loadImg(<span class="string">&apos;b.jpg&apos;</span>)</div><div class="line">).then(</div><div class="line">    () =&gt; loadImg(<span class="string">&apos;c.jpg&apos;</span>)</div><div class="line">).then(</div><div class="line">    () =&gt; <span class="built_in">console</span>.log(<span class="string">&apos;all done!&apos;</span>)</div><div class="line">)</div></pre></td></tr></table></figure></p>
 <p>loadImg&#x5728;&#x6B64;&#x5904;&#x662F;&#x4E2A;Promise&#x5DE5;&#x5382;, &#x6839;&#x636E;&#x53C2;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684;Promise<br>&#x8FD9;&#x91CC;&#x7684;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x4E0D;&#x80FD;&#x7701;&#x7565;, &#x56E0;&#x4E3A;Promise&#x5BF9;&#x8C61;&#x5728;new&#x7684;&#x65F6;&#x5019;&#x5C31;&#x5F00;&#x59CB;&#x6267;&#x884C;&#x5185;&#x90E8;&#x7684;&#x4EE3;&#x7801;.&#x6240;&#x4EE5;then&#x91CC;&#x7684;&#x4E1C;&#x897F;&#x53EF;&#x4EE5;&#x53EB;&#x505A;Promise&#x5DE5;&#x5382;&#x7684;&#x5DE5;&#x5382;&#x2026;<br>then&#x7684;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4F20;&#x8FDB;&#x53BB;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x4F20;Promise&#x5DE5;&#x5382;, &#x5F53;then&#x63A5;&#x53D7;&#x5230;&#x666E;&#x901A;&#x51FD;&#x6570;&#x65F6;&#x4F1A;&#x76F4;&#x63A5;&#x8FD0;&#x884C;, &#x5E76;&#x653E;&#x5230;try&#x5757;&#x91CC;, &#x9047;&#x5230;&#x9519;&#x8BEF;&#x5C31;reject&#x51FA;&#x53BB;  </p>
-<p>&#x4E00;&#x4E2A;Promise&#x4E00;&#x822C;&#x662F;&#x8FD9;&#x6837;&#x6784;&#x9020;&#x7684;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>{</span><br><span class="line">    <span class="comment">//do something here</span></span><br><span class="line">})</span><br></pre></td></tr></table></figure></p>
+<p>&#x4E00;&#x4E2A;Promise&#x4E00;&#x822C;&#x662F;&#x8FD9;&#x6837;&#x6784;&#x9020;&#x7684;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>{</div><div class="line">    <span class="comment">//do something here</span></div><div class="line">})</div></pre></td></tr></table></figure></p>
 <p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x51FD;&#x6570;&#x4E2D;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;, &#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x90FD;&#x662F;&#x56DE;&#x8C03;&#x51FD;&#x6570;, &#x7B2C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x65F6;&#x8C03;&#x7528;, &#x5F53;&#x5931;&#x8D25;&#x662F;&#x8C03;&#x7528;reject, &#x8FD9;&#x5C31;&#x662F;Promise&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;: &#x9047;&#x5230;reject&#x505C;&#x4E0B;&#x6765;, &#x627E;&#x5230;catch&#x51FD;&#x6570;, &#x6216;&#x8005;&#x4E00;&#x76F4;resolve, &#x76F4;&#x5230;&#x7ED3;&#x675F;  </p>
-<h2 id="bluebird-promisifyAll"><a href="#bluebird-promisifyAll" class="headerlink" title="bluebird.promisifyAll"></a>bluebird.promisifyAll</h2><p>(&#x56E0;&#x4E3A;&#x5728;require&#x7684;&#x65F6;&#x5019;&#x628A;bluebird&#x547D;&#x540D;&#x6210;&#x4E86;Promise, &#x6240;&#x4EE5;&#x4EE3;&#x7801;&#x4E2D;&#x5199;&#x4F5C;Promise.promisifyAll)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="built_in">Promise</span> = <span class="built_in">require</span>(<span class="string">&quot;bluebird&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> jsdom = <span class="built_in">Promise</span>.promisifyAll(<span class="built_in">require</span>(<span class="string">&apos;jsdom&apos;</span>));</span><br></pre></td></tr></table></figure></p>
+<h2 id="bluebird-promisifyAll"><a href="#bluebird-promisifyAll" class="headerlink" title="bluebird.promisifyAll"></a>bluebird.promisifyAll</h2><p>(&#x56E0;&#x4E3A;&#x5728;require&#x7684;&#x65F6;&#x5019;&#x628A;bluebird&#x547D;&#x540D;&#x6210;&#x4E86;Promise, &#x6240;&#x4EE5;&#x4EE3;&#x7801;&#x4E2D;&#x5199;&#x4F5C;Promise.promisifyAll)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="built_in">Promise</span> = <span class="built_in">require</span>(<span class="string">&quot;bluebird&quot;</span>);</div><div class="line"><span class="keyword">let</span> jsdom = <span class="built_in">Promise</span>.promisifyAll(<span class="built_in">require</span>(<span class="string">&apos;jsdom&apos;</span>));</div></pre></td></tr></table></figure></p>
 <p>Promise.promisify&#x5C06;&#x4E00;&#x4E2A; node callback &#x578B;&#x7684;&#x51FD;&#x6570;&#x5305;&#x88C5;&#x6210;Promise&#x578B;&#x7684;&#x51FD;&#x6570;, promisifyAll&#x5C06;&#x5BF9;&#x8C61;&#x5185;&#x7684;&#x6240;&#x6709;&#x51FD;&#x6570;&#x8FDB;&#x884C;promisify&#x5C06;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;, &#x5E76;&#x628A;&#x5305;&#x88C5;&#x540E;&#x7684;&#x51FD;&#x6570;&#x540D;&#x540E;&#x52A0;&#x4E0A;Async  </p>
-<h2 id="Promise&#x662F;&#x4E2A;&#x94FE;"><a href="#Promise&#x662F;&#x4E2A;&#x94FE;" class="headerlink" title="Promise&#x662F;&#x4E2A;&#x94FE;"></a>Promise&#x662F;&#x4E2A;&#x94FE;</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> jqueryHTML = <span class="function"><span class="keyword">function</span> (<span class="params">html, selector</span>) </span>{</span><br><span class="line">    <span class="keyword">let</span> ret = jsdom.envAsync(html)</span><br><span class="line">    .then(jquery);</span><br><span class="line">    <span class="keyword">if</span> (!isUndefined(selector))</span><br><span class="line">        ret = ret.then($ =&gt; $(selector));</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="Promise&#x662F;&#x4E2A;&#x94FE;"><a href="#Promise&#x662F;&#x4E2A;&#x94FE;" class="headerlink" title="Promise&#x662F;&#x4E2A;&#x94FE;"></a>Promise&#x662F;&#x4E2A;&#x94FE;</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> jqueryHTML = <span class="function"><span class="keyword">function</span> (<span class="params">html, selector</span>) </span>{</div><div class="line">    <span class="keyword">let</span> ret = jsdom.envAsync(html)</div><div class="line">    .then(jquery);</div><div class="line">    <span class="keyword">if</span> (!isUndefined(selector))</div><div class="line">        ret = ret.then(<span class="function"><span class="params">$</span> =&gt;</span> $(selector));</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">}</div></pre></td></tr></table></figure>
 <p>&#x8FD9;&#x662F;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;jQuery&#x5BF9;&#x8C61;&#x7684;&#x51FD;&#x6570;, ret&#x662F;&#x4E2A;Promise&#x94FE;, &#x5728;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x4E0B;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x662F;&#x5426;&#x6267;&#x884C;&#x6700;&#x540E;&#x4E00;&#x6B65;&#x2019;$ =&gt; $(selector)&#x2019;  </p>
-<h2 id="Promise&#x7684;&#x7ED3;&#x5408;"><a href="#Promise&#x7684;&#x7ED3;&#x5408;" class="headerlink" title="Promise&#x7684;&#x7ED3;&#x5408;"></a>Promise&#x7684;&#x7ED3;&#x5408;</h2><p>Promise&#x4F5C;&#x4E3A;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;, &#x81EA;&#x7136;&#x8981;&#x5E94;&#x5BF9;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x573A;&#x666F;. &#x5982;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x8BB8;&#x591A;&#x64CD;&#x4F5C;, &#x7B49;&#x5230;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x5B8C;&#x6210;, &#x53EF;&#x4EE5;&#x7528;Promise.all<br>&#x4E4B;&#x524D;&#x90A3;&#x4E2A;&#x4F8B;&#x5B50;&#x4E0D;&#x591F;&#x5B9E;&#x9645;, &#x4E00;&#x822C;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;&#x90FD;&#x662F;&#x4E00;&#x5806;&#x4E00;&#x8D77;&#x52A0;&#x8F7D;&#x7684;, &#x5F88;&#x5C11;&#x4E00;&#x4E2A;&#x4E2A;&#x52A0;&#x8F7D;, &#x6BD5;&#x7ADF;&#x4E0D;&#x662F;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([</span><br><span class="line">    loadImg(<span class="string">&apos;a.jpg&apos;</span>),</span><br><span class="line">    loadImg(<span class="string">&apos;b.jpg&apos;</span>),</span><br><span class="line">    loadImg(<span class="string">&apos;c.jpg&apos;</span>)</span><br><span class="line">]).then(() =&gt; {</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&apos;all done!&apos;</span>);</span><br><span class="line">})</span><br></pre></td></tr></table></figure></p>
+<h2 id="Promise&#x7684;&#x7ED3;&#x5408;"><a href="#Promise&#x7684;&#x7ED3;&#x5408;" class="headerlink" title="Promise&#x7684;&#x7ED3;&#x5408;"></a>Promise&#x7684;&#x7ED3;&#x5408;</h2><p>Promise&#x4F5C;&#x4E3A;&#x5F02;&#x6B65;&#x5904;&#x7406;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;, &#x81EA;&#x7136;&#x8981;&#x5E94;&#x5BF9;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x573A;&#x666F;. &#x5982;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x8BB8;&#x591A;&#x64CD;&#x4F5C;, &#x7B49;&#x5230;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x5B8C;&#x6210;, &#x53EF;&#x4EE5;&#x7528;Promise.all<br>&#x4E4B;&#x524D;&#x90A3;&#x4E2A;&#x4F8B;&#x5B50;&#x4E0D;&#x591F;&#x5B9E;&#x9645;, &#x4E00;&#x822C;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;&#x90FD;&#x662F;&#x4E00;&#x5806;&#x4E00;&#x8D77;&#x52A0;&#x8F7D;&#x7684;, &#x5F88;&#x5C11;&#x4E00;&#x4E2A;&#x4E2A;&#x52A0;&#x8F7D;, &#x6BD5;&#x7ADF;&#x4E0D;&#x662F;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Promise</span>.all([</div><div class="line">    loadImg(<span class="string">&apos;a.jpg&apos;</span>),</div><div class="line">    loadImg(<span class="string">&apos;b.jpg&apos;</span>),</div><div class="line">    loadImg(<span class="string">&apos;c.jpg&apos;</span>)</div><div class="line">]).then(<span class="function"><span class="params">()</span> =&gt;</span> {</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">&apos;all done!&apos;</span>);</div><div class="line">})</div></pre></td></tr></table></figure></p>
 <p>&#x6709;&#x65F6;&#x53EA;&#x9700;&#x8981;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5B8C;&#x6210;&#x5C31;&#x7EE7;&#x7EED;, &#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Promise.race  </p>
-<p>&#x5728;&#x6211;&#x7684;&#x4E00;&#x4E2A;Chrome&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x4E2D;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5C11;&#x89C1;&#x7684;&#x60C5;&#x51B5;, &#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E2A;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;, &#x76F4;&#x5230;&#x9047;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x6210;&#x529F;&#x7684;&#x7ED3;&#x675F;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">untilFirstResolve</span>(<span class="params">list</span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; {</span><br><span class="line">        <span class="keyword">var</span> itr = list[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line">        <span class="keyword">var</span> v, next;</span><br><span class="line">        next = (e) =&gt; {</span><br><span class="line">            v = itr.next()</span><br><span class="line">            <span class="keyword">if</span> (!v.done) {</span><br><span class="line">                v.value().then(resolve, next); <span class="comment">//&#x52A0;&#x8F7D;&#x6210;&#x529F;&#x5C31;resolve, &#x5931;&#x8D25;&#x5C31;&#x5C1D;&#x8BD5;&#x4E0B;&#x4E00;&#x4E2A;</span></span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                reject(); <span class="comment">//&#x5982;&#x679C;&#x8FED;&#x4EE3;&#x5B8C;&#x8FD8;&#x6CA1;&#x6210;&#x529F;&#x7684;&#x5C31;reject&#x629B;&#x51FA;&#x9519;&#x8BEF;</span></span><br><span class="line">            }</span><br><span class="line">        };</span><br><span class="line">        next();</span><br><span class="line">    });</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x5728;&#x6211;&#x7684;&#x4E00;&#x4E2A;Chrome&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x4E2D;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5C11;&#x89C1;&#x7684;&#x60C5;&#x51B5;, &#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E2A;&#x52A0;&#x8F7D;&#x8D44;&#x6E90;, &#x76F4;&#x5230;&#x9047;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x6210;&#x529F;&#x7684;&#x7ED3;&#x675F;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">untilFirstResolve</span>(<span class="params">list</span>) </span>{</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> {</div><div class="line">        <span class="keyword">var</span> itr = list[<span class="built_in">Symbol</span>.iterator]();</div><div class="line">        <span class="keyword">var</span> v, next;</div><div class="line">        next = <span class="function">(<span class="params">e</span>) =&gt;</span> {</div><div class="line">            v = itr.next()</div><div class="line">            <span class="keyword">if</span> (!v.done) {</div><div class="line">                v.value().then(resolve, next); <span class="comment">//&#x52A0;&#x8F7D;&#x6210;&#x529F;&#x5C31;resolve, &#x5931;&#x8D25;&#x5C31;&#x5C1D;&#x8BD5;&#x4E0B;&#x4E00;&#x4E2A;</span></div><div class="line">            } <span class="keyword">else</span> {</div><div class="line">                reject(); <span class="comment">//&#x5982;&#x679C;&#x8FED;&#x4EE3;&#x5B8C;&#x8FD8;&#x6CA1;&#x6210;&#x529F;&#x7684;&#x5C31;reject&#x629B;&#x51FA;&#x9519;&#x8BEF;</span></div><div class="line">            }</div><div class="line">        };</div><div class="line">        next();</div><div class="line">    });</div><div class="line">}</div></pre></td></tr></table></figure></p>
 <h2 id="&#x540E;&#x8BB0;"><a href="#&#x540E;&#x8BB0;" class="headerlink" title="&#x540E;&#x8BB0;"></a>&#x540E;&#x8BB0;</h2><p>Promise&#x7528;&#x8D77;&#x6765;&#x5F88;&#x7075;&#x6D3B;, &#x5F88;&#x65B9;&#x4FBF;&#x6DFB;&#x52A0;&#x6B65;&#x9AA4;(&#x53EA;&#x8981;&#x5728;&#x4E24;&#x4E2A;then&#x4E4B;&#x95F4;&#x52A0;&#x4E00;&#x4E2A;then&#x5C31;&#x80FD;&#x6DFB;&#x52A0;).<br>&#x542C;&#x8BF4;async&#x548C;await&#x5904;&#x7406;&#x5F02;&#x6B65;&#x66F4;&#x52A0;&#x65B9;&#x4FBF;, &#x4EE5;&#x540E;&#x6709;&#x7A7A;&#x56F4;&#x89C2;&#x4E00;&#x4E0B;. </p>
 
       
@@ -425,25 +427,6 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/15/Promise大杂烩/"
-     data-title="Promise大杂烩"
-     data-content=""
-     data-url="http://blog.imspace.cn/2016/04/15/Promise大杂烩/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
-      
     </div>
   </div>
 
@@ -455,8 +438,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/15/Promise大杂烩/"
-           data-title="Promise大杂烩" data-url="http://blog.imspace.cn/2016/04/15/Promise大杂烩/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -722,32 +708,30 @@
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"imspace3"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'imspace';
+      var disqus_identifier = '2016/04/15/Promise大杂烩/';
+      var disqus_title = "Promise大杂烩";
+      var disqus_url = 'http://blog.imspace.cn/2016/04/15/Promise大杂烩/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
       
-      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js"></script>
-    
+        run_disqus_script('embed.js');
+      
+    </script>
   
-
-
 
 
 

